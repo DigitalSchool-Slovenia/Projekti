@@ -1,0 +1,33 @@
+.secondClock, .minuteClock, .hourClock {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+.hourHand {
+    position: absolute;
+    width: 4px;
+    height: 60px;
+    background-color: green;
+    top: 30%;
+    left: 49%;
+}
+
+.minuteHand {
+    position: absolute;
+    width: 4px;
+    height: 80px;
+    background-color: blue;
+    top: 20%;
+    left: 49%;
+}
+
+.secondHand {
+    position: absolute;
+    width: 4px;
+    height: 100px;
+    background-color: red;
+    top: 10%;
+    left: 49%;
+}
