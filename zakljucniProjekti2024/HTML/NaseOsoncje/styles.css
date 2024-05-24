@@ -1,0 +1,17 @@
+img{
+	height: 450px;
+	width: 700;
+	margin:0 auto;
+	display: block;
+	margin-top:0px;
+}
+
+
+h1{
+	font-size: 200px;
+	color: aquamarine;
+	text-align: center;
+}
+body{
+	background-color:#778899;
+}

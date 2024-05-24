@@ -1,0 +1,21 @@
+h1{
+	color: lightgrey;
+	font-family: cursive;
+}
+p{
+	color: white;
+	background-color: grey;
+	padding: 10px;
+	border-radius: 20px;
+}
+body
+{
+	background-image:url(https://static.standard.co.uk/2022/07/22/12/GettyImages-1192985390.jpg?crop=8:5,smart&quality=75&auto=webp&width=1024) ;
+
+	
+}
+img {
+	width: 50%;
+	border: 20px outset chocolate;
+	border-radius: 20px;
+}

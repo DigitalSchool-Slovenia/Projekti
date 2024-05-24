@@ -1,0 +1,23 @@
+h1{
+	color: green;
+	margin-left: 10px;
+	
+}
+p{
+	color: white;
+	margin-left: 50px;
+	border-radius: 20px;
+	background-color: darkgreen;
+	padding: 10px;
+}
+
+body{
+	background-image:url(https://i.natgeofe.com/n/dd0d3b83-a273-4f73-bb33-f22176745ba3/00000167-1459-d376-af6f-dc5b246a0000_3x4.jpg);
+	background-size: 100%;
+}
+img{
+		/*padding: 20px;*/
+	width:450px;
+	border: 20px outset dimgray;
+	border-radius: 20px;
+}

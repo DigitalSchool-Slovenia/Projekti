@@ -1,0 +1,14 @@
+img {
+	width: 40% ;
+	height: 200 px;
+
+}
+
+.slike {
+	display: flex;
+	justify-content: center;
+}
+
+.slike div {
+	width: 50%;
+}

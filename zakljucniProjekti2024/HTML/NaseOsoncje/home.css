@@ -1,0 +1,17 @@
+h1 {
+	text-align: center;
+}
+
+img {
+	float: left;
+	width: 300px;
+
+
+}
+
+body{
+	background: url(https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?cs=srgb&dl=pexels-francesco-ungaro-998641.jpg&fm=jpg);
+	background-size: 100%;
+	background-position: center;
+	color: white;
+}

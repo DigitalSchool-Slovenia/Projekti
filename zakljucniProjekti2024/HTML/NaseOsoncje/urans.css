@@ -1,0 +1,26 @@
+h1{
+	color:darkcyan; cyan;
+	font-family: fantasy;
+	margin-left: 10px;
+
+}
+
+body{
+	background-image: url(https://science.nasa.gov/wp-content/uploads/2023/10/uranusmain.png?w=1268);
+	background-size: 100%;
+ 	
+}
+p{
+	color: white;
+	margin: auto;
+	background-color: indigo;
+	border-radius: 20px;
+	padding: 20px;
+
+}
+img{
+	/*padding: 20px;*/
+	width:450px;
+	border: 20px outset goldenrod;
+	border-radius: 20px;
+}

@@ -1,0 +1,33 @@
+ h1{
+	font-size: 100px;
+	color: #CD853F;
+	margin-left: 0 auto;
+	text-align: center;
+}
+
+
+
+div img{
+	margin-left: 100px;
+	margin-top: 50px;
+	height: 250px;
+	width: 400px;
+}
+
+div{	
+	border-style: solid;
+	margin-left: auto;
+	padding: 20px;
+	width: 500px;
+
+
+
+}
+
+img{
+/*float:left;*/
+	margin-left: 100px;
+	height:350px;
+	width: 350px;
+
+}
