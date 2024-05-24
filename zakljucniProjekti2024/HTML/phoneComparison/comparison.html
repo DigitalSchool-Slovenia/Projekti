@@ -1,13 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Phone comparing website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Comparison</title>
+    <link rel="stylesheet" type="text/css" href="comparison.css">
 </head>
 <body>
-
-	Phone comparison
-
+    <header>
+        <h1>Phone Comparison Website</h1>
+    </header>
+    <main>
+        <div id="phones">
+            <!-- Phone listings will be dynamically added here -->
+        </div>
+        <section id="comparison">
+            <h2>Comparison</h2>
+            <form id="comparisonForm">
+                <label for="phone1">Select Phone 1:</label>
+                <select id="phone1">
+                    <!-- Options will be dynamically added here -->
+                </select>
+                <label for="phone2">Select Phone 2:</label>
+                <select id="phone2">
+                    <!-- Options will be dynamically added here -->
+                </select>
+                <button type="submit" id="compare">Compare</button>
+            </form>
+            <div id="comparisonResult">
+                <!-- Comparison results will be displayed here -->
+            </div>
+        </section>
+    </main>
+    <script type="text/javascript" src="comparison.js"></script>
 </body>
 </html>

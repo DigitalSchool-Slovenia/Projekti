@@ -1,0 +1,31 @@
+div{
+	width: 100%;
+	color: white;
+	border:2px solid grey;
+}
+
+.phone {
+	border:2px solid grey;
+	padding: 50px;
+}
+#phones{
+	display: flex;
+}
+img{
+	height: 200px;
+}
+body{
+	background-color: black;
+	font-family: "Permanent Marker", cursive;
+}
+h1, h2{
+	color: lightblue;
+	text-align: center;
+}
+#comparisonResult{
+	display: flex;
+}
+section{
+	color: white;
+	padding: 50px;
+}
