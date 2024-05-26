@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+
+*{
+ font-family: "Shadows Into Light", cursive;
+}
+p{
+	font-size: 60px;
+	color: darkgoldenrod;
+}
+#fatcat{
+	width: 500px;
+}
+h1{
+	font-size: 100px;
+	color: orangered;
+}
+h3{
+	font-size: 100px;
+	color: darkorange;
+}
+ul{
+	font-size: 60px;
+	color: darkgoldenrod;
+}
+body{
+	background-image: url("macek.jpg");
+
+	background-size: 100%;
+	height: 100%;
+
+}

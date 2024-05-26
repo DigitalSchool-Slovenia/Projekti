@@ -1,0 +1,43 @@
+div {
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+table, tr, th {
+	border: 5px solid;
+	border-collapse: collapse;
+}
+
+table {
+	width: 100%;
+	height: 50%;
+}
+
+th {
+	font-size: 200%;
+}
+
+tr {
+	font-size: 175%;
+	font-family: "copperplate", fantasy;
+}
+
+h1 {
+	font-family: "copperplate", fantasy;
+	font-size: 200%;
+}
+
+h3 {
+	font-size: 500%;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+#PES{
+	height: 10%;
+	width: 10%;
+}
+
+
