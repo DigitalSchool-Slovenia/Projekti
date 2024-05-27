@@ -1,0 +1,19 @@
+body {
+	background-image: url(ltlslikaltl);
+}
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+}
+nav li {
+		display: inline-block;
+}
+@media (min-width: 600px){
+		body{
+	background: #00004e;
+	color: white;
+}
+ }
+		

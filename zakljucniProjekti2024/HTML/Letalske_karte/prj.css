@@ -1,0 +1,47 @@
+#i{
+	border:dashed ;
+	background-color: gray;
+	text-align: left;
+}
+#d{
+	border:dashed ;
+	background-color: lightblue;
+}
+#e{
+	border:dashed ;
+	background-color: darkgreen;
+	color: darkgoldenrod;
+}
+#p{
+	border:dashed ;
+	background-color: darkblue;
+	color: darkgoldenrod;
+}
+.t{
+	margin-left: 300px;
+	margin-top: 1px;
+}
+#i div{
+	float: left;
+}
+a{
+	text-decoration: none;
+	background-color: black;
+	color: white;
+	border: dotted;
+}
+#d div{
+	float: left;
+}
+#e div{
+	float: left;
+}
+#w {
+	float: left;
+}
+#u {
+	color: red;
+}
+#abc {
+	background-color: aqua;
+}

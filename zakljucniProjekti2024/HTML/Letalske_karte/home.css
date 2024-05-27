@@ -1,0 +1,45 @@
+#za{
+	text-align: center;
+	background-image: url(mexico.jfif) ;
+	height: 500px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	margin-top: 5px
+	text-align: center;
+	
+}
+.lepo{
+	color: white;
+	font-size: 50px;
+	border-style: dotted;
+}
+#si{
+	text-align: center;
+	background-image: url(jetimg.jpg);
+	height: 500px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	margin-top: 30px;
+	text-align: center;
+}
+.privattext{
+	color: white;
+	font-size: 50px;
+	border-style: dotted;
+}
+#di{
+	text-align: center;
+	background-image: url(maldivi.jpg);
+	height: 500px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	margin-top: 30px;
+	text-align: center;
+
+}
+.maldivi{
+	color: white;
+	font-size: 50px;
+	border-style: dotted
+}
+
