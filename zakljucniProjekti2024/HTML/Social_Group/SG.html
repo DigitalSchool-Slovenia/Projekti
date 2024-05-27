@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Group</title>
+  <link rel="icon" type="image/png" href="logo.jpeg">
+  <link rel="stylesheet" type="text/css" href="final_project.css">
+  
+  
+  
+</head>
+<body>
+   
+    <header>
+        <nav>
+            <ul>
+                <li><button class="home"><a  href="./SG1"></a><button></li>
+                <li><a href="./SG2">friends</a></li>
+                <li><a href="./SG3">topics</a></li>
+                <li><a href="./">settings</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div id="intro"
+    class="intro">
+        <h1> Welcome to Social Group</h1>
+        <img src="logo.jpeg" alt="Our logo" width="200px" height="185px">
+      </div>
+      <header>
+        <nav>
+            <ul>
+                <li><a href="./SG1">home</a></li>
+                <li><a href="./SG2">friends</a></li>
+                <li><a href="./SG3">topics</a></li>
+                <li><a href="./">settings</a></li>
+            </ul>
+        </nav>
+    </header>
+        <div class="post">
+            <div class="user">John Doe</div>
+            <div class="timestamp">May 13, 2024</div>
+            <div class="content">
+                <p>This is the content of the social media post. It could be a text, image, video, or any other media.</p>
+            </div>
+            <div class="actions">
+                <button>Like</button> · <button>Comment</button> · <button>Share</button>
+            </div>
+        </div>
+    
+        <div class="post">
+            <div class="user">Jane Smith</div>
+            <div class="timestamp">May 12, 2024</div>
+            <div class="content">
+                <p>Another example post with some different content.</p>
+                <img src="image.jpg" alt="Example Image">
+            </div>
+            <div class="actions">
+              <button>Like</button> · <button>Comment</button> · <button>Share</button>
+            </div>
+        </div>
+    
+        <div class="post">
+            <div class="user">Alex Johnson</div>
+            <div class="timestamp">May 11, 2024</div>
+            <div class="content">
+                <p>This post contains a video:</p>
+                <video controls>
+                    <source src="./UH OH.mp4" type="./UH OH.mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="actions">
+              <button>Like</button> · <button>Comment</button> · <button>Share</button>
+            </div>
+        </div>
+    
+        <div class="post">
+            <div class="user">Emily Brown</div>
+            <div class="timestamp">May 10, 2024</div>
+            <div class="content">
+                <p>Here's a longer post with more text content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vestibulum blandit orci a interdum. Nulla facilisi. Integer vestibulum eros non dui aliquam, in aliquam libero blandit.</p>
+            </div>
+            <div class="actions">
+              <button>Like</button> · <button>Comment</button> · <button>Share</button>
+            </div>
+        </div>
+        <script>
+          document.querySelectorAll('.btn').forEach(function(button) {
+              button.addEventListener('click', function() {
+                  const action = this.textContent;
+                  alert('You clicked ' + action);
+              });
+          });
+      </script>
+
+
+<script src="Final_Project.js"></script> 
+</body>
+</html>
