@@ -1,0 +1,49 @@
+nav {
+	overflow:hidden;
+		background-color: dodgerblue;
+
+	width:100%;
+}
+nav a {
+	float:left;
+		font-size:50px;
+			text-decoration: none;
+				padding: 10px;
+
+			color:white;
+}
+.dropdown .dropbtn {
+
+}
+nav a:hover, .dropbtn:hover {
+	background-color:gray;
+}
+.dropdown {
+	overflow:hidden;
+	float: left;
+}
+.dropbtn {
+	display:block;
+			font-size:50px;
+			color:white;
+				padding: 10px;
+
+}
+.dropdown-content {
+	display:none;
+	position:absolute;
+	z-index:1;
+	  background-color: dodgerblue;
+
+}
+.dropdown-content a{
+	float:none;
+	display:block;
+}
+.dropdown:hover .dropdown-content {
+	display:block;
+}
+nav img {
+	height:50px;
+
+}

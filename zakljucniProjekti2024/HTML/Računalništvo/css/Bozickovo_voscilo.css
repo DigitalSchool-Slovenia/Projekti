@@ -1,0 +1,16 @@
+h1 {
+	font-size: 5;
+	color: yellow;
+}
+body {
+	background-image: url("../slike/bozicna_okraska.jpg");
+	background-size: 100%;
+}
+div {
+	margin-right: 40%;
+	margin-left: 40%;
+	background-color: red;
+}
+p1 {
+	color: green;
+}

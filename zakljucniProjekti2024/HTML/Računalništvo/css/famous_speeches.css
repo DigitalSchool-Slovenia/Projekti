@@ -1,0 +1,13 @@
+.Mexico {
+	background-image: url("../slike/mexicanflag.png");
+}
+.USA {
+	background-image: url("../slike/istockphoto-1126410503-640x640.jpg");
+}
+.German {
+	background-image: url("../slike/svastika");
+}
+div {
+	width: 500px;
+	heigh: 200px;
+}

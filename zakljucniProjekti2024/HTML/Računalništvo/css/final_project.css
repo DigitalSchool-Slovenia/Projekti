@@ -1,0 +1,16 @@
+.divov{
+  margin-right:50px;
+  width:30%;
+  border-radius:25px;
+  border:solid 3px;
+  float:left;
+  border-color: black; 
+  margin-bottom: 15px;
+  text-align:center;
+  padding-bottom:5px;
+}
+.divov:hover{
+  border-width:5px;
+  margin-right:46px;
+  margin-bottom:11px;
+}

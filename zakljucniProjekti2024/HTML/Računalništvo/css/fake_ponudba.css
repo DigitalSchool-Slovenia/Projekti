@@ -1,0 +1,20 @@
+.fponudba {
+	margin-right: 50px;
+	border: double;
+	border-radius: 25px;
+	float: left;
+}
+.heading {
+	text-align: center;
+	text-decoration: none;
+	font-size: 25px;
+	float: center;
+}
+.button {
+	background-color: dodgerblue;
+	text-align: center;
+	text-decoration: none;
+}
+div {
+	float: left;
+}
