@@ -1,0 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+h1{
+
+	background-image:url( "./saturn.jpg");
+	height: 100px;
+	color: white;
+}
+p{
+
+	font-size: 30px;
+}
+ul{
+
+	font-size: 30px;
+
+	color: white;
+	background-color: black;
+}
+.sketchfab-embed-wrapper{
+
+	height: 2000px;
+	width: 4000px;
+}
+body{
+	border-color: brown;
+	border-style: dotted;
+}

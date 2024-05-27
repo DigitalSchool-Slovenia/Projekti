@@ -1,0 +1,65 @@
+h1{
+	color: white;
+	background-image: url("./zvezde.jpg");
+	border-radius: 20px;
+	height: 50px;
+	margin-right: 700px;
+}
+
+.bla{
+	border: double;
+	border-width: 20px;
+	border-radius: 20px;
+	display: inline-block;
+	margin-right: 20px;
+	float: left;
+
+}
+
+p{
+
+	margin-left: 300px;
+	margin-right: 300px;
+	margin-top: 100px;
+}
+
+
+
+#myImage{
+	width: 500px;
+	height: 300 px;
+	border-radius: 20px;
+}
+
+h2{
+	color: white;
+	background-color: black;
+	border-radius: 20px;
+	height: 70px;
+	margin-right: 20px;
+	margin-top: 0px;
+}
+
+body{
+	background-image: url("./vesolje2.jpg") ;
+	background-size: 100%;
+}
+
+neki{
+	color: white;
+	margin-left: 100px;
+	margin-top: 10px;
+	
+}
+
+.img{
+	border: dashed;
+	border-radius: 20px;
+	height: 200px;
+	width: 200px;
+
+}
+
+a{
+	color: black;
+}
