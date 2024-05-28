@@ -1,0 +1,28 @@
+nav ul {
+	background-color: black;
+	list-style-type: none;
+	overflow: hidden;
+	margin: 0px ;
+	padding: 0px;
+	height: 55px;
+}
+nav li {
+	float: left;
+	text-align: center;
+}
+nav a {
+	color: lightgrey;
+	text-decoration: none;
+	font-size: 31px;
+	display: block;
+	padding: 10px;
+	text-align: center;
+}
+nav a:hover {
+	color: black;
+	background-color: lightgrey;
+}
+nav img {
+	height: 55px;
+	margin-bottom: 0px;
+}

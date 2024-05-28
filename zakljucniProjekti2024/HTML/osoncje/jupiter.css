@@ -1,0 +1,17 @@
+p{
+	color: blue;
+}
+body{
+	background-image:url("jupiter.jpg");
+	background-size: 80%;
+	background-position-y:-200px ;
+	background-repeat: no-repeat;
+	background-color: black;
+}
+h1{
+	color: blue;
+}
+img{
+	float: right;
+	margin-right: 50px;
+}

@@ -1,0 +1,30 @@
+body{
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg");
+	background-size: 85%;
+	background-position-x:200px;
+	background-position-y: -200px;
+}
+
+
+h1{
+	color: white;
+}
+
+p{
+	color: blue;
+}
+
+
+img{
+	margin-left: 20px;
+	float: left;
+	width: 25%;
+	height: 25%;
+	margin-top: 10vh;
+}
+
+.main{
+	width: 70%;
+	float: left;
+
+}

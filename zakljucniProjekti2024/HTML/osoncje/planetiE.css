@@ -1,0 +1,40 @@
+body {
+	background-color: black;
+}
+h1{
+	font-family: fantasy;
+	color: white;
+}
+p{
+	color: blue;
+	text-align:center;
+	font-size: 30px;
+	font-family: cursive;
+}
+.planeti ul {
+	background-color: black;
+	list-style-type: none;
+	overflow: hidden;
+	margin: 0px ;
+	padding: 0px;
+}
+.planeti li {
+	float: left;
+	text-align: center;
+}
+.planeti a {
+	color: lightgrey;
+	text-decoration: none;
+	font-size: 30px;
+	display: block;
+	text-align: center;
+}
+.planeti a:hover {
+	color: black;
+	background-color: black;
+}
+.planeti img {
+	width: 20vw;
+	margin: 0px;
+	padding: 0px;
+}

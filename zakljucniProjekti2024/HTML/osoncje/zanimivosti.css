@@ -1,0 +1,32 @@
+.bold{
+	font-weight: bold;
+	color: blue;
+}
+hr{
+	color: blue;
+}
+body{
+	background-color: lightblue;
+	background-size: 100%;
+}
+p{
+	color: white;
+}
+h1{
+	color: blue;
+}
+.zanimivosti{
+	width: 50%;
+}
+img{
+	width: 100%;
+}
+.side,.zanimivosti{
+	float: left;
+}
+.side {
+	width: 40%;
+margin-left: 5%;
+padding-top: 50px;
+
+}

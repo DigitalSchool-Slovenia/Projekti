@@ -1,0 +1,14 @@
+body{
+	background-image: url("catinspace.jpeg");
+	background-size: 100%;
+	background-position-y: -200px;
+}
+h1{
+	color: gold;
+
+}
+p{
+	font: sans-serif;
+	font-size: 20px;
+	color: white;
+}

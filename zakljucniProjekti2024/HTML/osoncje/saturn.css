@@ -1,0 +1,24 @@
+img{
+	margin-left: 20px;
+	float: left;
+	width: 25%;
+	height: 25%;
+	margin-top: 10vh;
+}
+
+body{
+
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Saturn_from_Cassini_Orbiter_%282004-10-06%29.jpg/1920px-Saturn_from_Cassini_Orbiter_%282004-10-06%29.jpg");
+	background-position-y: -200px;
+	background-position-x: -200px;
+}
+
+
+
+
+p{
+	color: blue;
+}
+h1{
+	color: blue;
+}
