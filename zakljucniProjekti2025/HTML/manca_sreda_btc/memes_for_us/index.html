@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>GameSpace</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+<body>
+
+
+	<div class="top">
+
+		
+
+		<a href="memeforus.html" target="_blank"><h4>MemesForUs</h4></a>
+
+		<a href="music.html" target="_blank"><h4>MC Music Wiki</h4></a>
+
+
+
+		
+
+		
+		<img class="sk" src="https://cdn-icons-png.flaticon.com/512/8694/8694768.png">
+		
+		<a href="minecraft_clicker.html" target="_blank"><h4>Minecraft clicker</h4></a>
+		
+
+
+
+	</div>
+
+	<br><br>
+
+
+	<div class="div_main">
+
+		<h1 class="Main">Are you bored of just watching tv endlessly?</h1>
+		<p>Then come and chill at GameSpace, a platform made by gamers for gamers</p>
+		<p>We are a small team of web developers aiming to create the best website for gamers. <br> Here you can find different stuff wether its gaming to chilling with fire music or just watching memes that will blow your socks off.</p>
+		<p>Subscribe to our newsletter to get information on all of the latest games and updates!</p>
+
+
+	</div>
+
+
+
+		<div class="ime">
+
+			<h2> Subscribe to our weekly newsletter! </h2>
+
+
+
+		<form>
+			
+			<br>
+
+			<label for="credit">Email</label>
+			<input type="text" placeholder="example@gmail.com" id="mail_input"></input>
+
+
+			<br>
+			<br>
+			<br>
+
+			<label for="SSN">Phone number</label>
+			<input type="text" placeholder="Example: 000 000 000" id="phone_input"></input>
+
+
+			<br>
+			<br>
+			<br>
+
+
+			<button id="scam">Send</button>
+			<p id="sent"></p>
+
+			<br>
+
+
+			<script>
+				document.getElementById("scam").addEventListener('click', function(event){
+    				event.preventDefault();
+
+    				document.getElementById("scam").innerText = "Sent"
+    				document.getElementById("mail_input").value = ""
+    				document.getElementById("phone_input").value = ""
+    				document.getElementById("sent").innerText = "Sent successfully✔️"
+				})
+
+
+			</script>
+
+
+
+</body>
+</html>
