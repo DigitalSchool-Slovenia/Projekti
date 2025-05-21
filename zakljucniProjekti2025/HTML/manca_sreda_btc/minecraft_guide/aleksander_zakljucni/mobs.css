@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 3px 5px 0px rgba(0,0,0,0.65);
+}
+
+
+body{
+  margin: 0;
+  text-align: center;
+  background-size: 100%;
+  background-image: url(updates_images/dirt_block.jpg);
+}
+
+
+h3{
+  font-size: 30px;
+  color: red;
+}
+
+
+
+li{
+  font-size: 20px;
+  color: red;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+h1{
+  font-size: 50px;
+  color: red;
+}
+
+
+p{
+  font-size: 20px;
+  color: white;
+}
+
+
+.image_frame{
+  background-image: url(updates_images/slikaborder.jpg);
+  padding: 2rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-image: url(updates_images/ozadje.png);
+  color: white;
+}
+
+hr {
+  color: green;
+  }
+
+
+#ena {
+  color: yellow;
+  }
+
+
+  #dva {
+    color:grey ;
+  }
+
+
+  #tri {
+    color: green;
+  }
+
+
+  #stiri {
+    color:darkblue ;
+  }
+
+
+  #pet {
+    color: pink;
+  }
+
+
+  #sest1 {
+    color: purple;
+  }
+
+
+  #sedem {
+    color: orange;
+  }
+
+
+  #osem {
+    color: lightcyan;
+  }
+
+
+  #devet {
+    color: lightgreen;
+  }
+
+
+  #deset {
+    color: lightskyblue;
+  }
+
+
+  #enajst {
+    color: lightyellow;
+  }
+
+
+  #dvanjast1 {
+    color: darkgreen;
+  }
+
+
+   #trinajst {
+    color: darkgoldenrod;
+  }
