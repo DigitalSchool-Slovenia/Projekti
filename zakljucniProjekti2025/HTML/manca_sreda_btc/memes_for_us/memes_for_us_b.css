@@ -1,0 +1,57 @@
+body{
+	align-items:center;
+	justify-content:center;
+	background-image: url('./memes_for_us_b_images/raimbow.jpg');
+	background-size: cover;
+	background-position: center;
+
+
+}
+
+
+	.top {
+
+
+	 background-color: black; 
+	 text-align: center; 
+	 display: flex;
+	 justify-content: center;
+	 gap: 20px;
+
+
+	}
+
+
+	.top a { 
+
+		color: white; 
+
+		display: inline-block;
+		text-decoration: none; 
+		font-size: 25px;
+		display: block;
+
+
+	}
+	        
+	.top a:hover { 
+
+
+		background-color:grey ; 
+
+	}
+
+	.top img { 
+		line-height: 100%;
+		display: block;
+		margin: auto 0;
+
+		height: 50px;
+		color: white; 
+		display: inline-block;
+		text-decoration: none; 
+		width: 50px;
+
+
+
+	}

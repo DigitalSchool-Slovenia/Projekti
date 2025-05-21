@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Minecraft Cliker</title>
+</head>
+<body>
+
+
+
+
+	<style>
+
+		body {
+
+			background-color: darkgreen;
+
+		}
+
+
+		section{
+
+
+			display: grid;
+			justify-content: center;
+			gap: 20px;
+			width: 500px;
+			margin: 0 auto;
+			padding: 30px 30px;
+			background-color: beige;
+			border-radius: 20px;
+			outline: 5px solid black;
+
+
+
+
+
+
+		}
+
+		#cookie {
+
+
+			background-image: url("pear.png");
+			background-size: cover;
+			background-position: center;
+			height: 300px;
+			width: 300px;
+			transition: 100ms;
+			cursor: pointer;
+			outline: 5px solid saddlebrown;
+			border-radius: 15px;
+
+		}
+
+
+		#hruska_kliker {
+
+			width: fit-content;
+			margin: 0 auto;
+			padding: 5px 20px;
+			background-color: lightgreen;
+			border-radius: 5px;
+			font-family: monospace;
+			font-size: 20px;
+			transition: 300ms;
+
+
+
+
+	
+
+		}
+
+
+		#cookie_mini {
+
+
+
+
+			scale: 0.7;
+			background-image: url("apple.png");
+			background-size: cover;
+			background-position: center;
+			height: 300px;
+			width: 300px;
+			transition: 100ms;
+			cursor: pointer;
+			outline: 5px solid saddlebrown;
+			border-radius: 15px;
+
+		}
+
+
+		#hruska_kliker_mini {
+
+			scale: 0.7;
+
+			width: fit-content;
+			margin: 0 auto;
+			padding: 5px 20px;
+			background-color: lightgreen;
+			border-radius: 5px;
+			font-family: monospace;
+			font-size: 20px;
+			transition: 300ms;
+
+
+
+
+	
+
+		}
+
+
+
+		#hruska_kliker:hover {
+
+			scale: 1.1;
+
+
+
+		}
+
+
+
+		#hruska_kliker:active {
+
+			scale: 0.98;
+
+
+
+		}	
+
+		#cookie:hover {
+
+			scale: 1.02;
+
+
+
+		}
+
+
+		#cookie:active {
+
+			scale: 0.98;
+
+
+
+		}
+
+
+
+		#hruska_kliker_mini:hover {
+
+			scale: 0.80;
+
+
+
+		}
+
+
+
+		#hruska_kliker_mini:active {
+
+			scale: 0.68;
+
+
+
+		}	
+
+		#cookie_mini:hover {
+
+			scale: 0.82;
+
+
+
+		}
+
+
+		#cookie_mini:active {
+
+			scale: 0.68;
+
+
+
+		}
+
+
+		#stone_label {
+
+
+			width: fit-content;
+			margin: 0 auto;
+			padding: 5px 20px;
+			background-color: lightgreen;
+			border-radius: 5px;
+			font-family: monospace;
+			font-size: 20px;
+			transition: 300ms;
+
+
+
+		}
+
+		#iron_label {
+
+
+			width: fit-content;
+			margin: 0 auto;
+			padding: 5px 20px;
+			background-color: lightgreen;
+			border-radius: 5px;
+			font-family: monospace;
+			font-size: 20px;
+			transition: 300ms;
+
+
+
+
+
+
+
+		}
+
+
+		#diamond_label {
+
+
+			width: fit-content;
+			margin: 0 auto;
+			padding: 5px 20px;
+			background-color: lightgreen;
+			border-radius: 5px;
+			font-family: monospace;
+			font-size: 20px;
+			transition: 300ms;
+
+
+
+
+
+
+
+		}
+
+
+
+	p {
+
+		font-size: 20px;
+
+
+	}
+
+
+	.top {
+
+
+	 background-color: black; 
+	 text-align: center; 
+	 display: flex;
+	 justify-content: center;
+	 gap: 20px;
+
+
+	}
+
+
+	.top a { 
+
+		color: white; 
+
+		display: inline-block;
+		text-decoration: none; 
+		font-size: 25px;
+		display: block;
+
+
+	}
+	        
+	.top a:hover { 
+
+
+		background-color:grey ; 
+
+	}
+
+	.top img { 
+		line-height: 100%;
+		display: block;
+		margin: auto 0;
+
+		height: 50px auto;
+		color: white; 
+		display: inline-block;
+		text-decoration: none; 
+		width: 50px ;
+
+
+
+	}
+
+	.ime {
+
+		border:10px solid black;
+		text-align: center;
+		display: inline-block;
+		margin-left: 40%;
+
+	}
+
+
+
+
+
+	</style>
+
+
+		<div class="top">
+
+		<a href="index.html" target="_blank"><h4>Back</h4></a>
+
+		
+
+		
+		<img class="sk" src="https://cdn-icons-png.flaticon.com/512/8694/8694768.png">
+		
+		<a href="memeforus.html" target="_blank"><h4>MemesForUs</h4></a>
+		
+		<a href="music.html" target="_blank"><h4>MC Music Wiki</h4></a>
+		
+	</div>
+
+	<br><br>
+
+
+	<section>
+
+		<button id="cookie" onclick="hruska_klik()"><img src="data:image/jpeg;base64,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"></img></button>
+		<p id="hruska_kliker">1</p>
+
+
+
+		<button id="cookie_mini" onclick="hruska_klik_mini()"><img src="https://minecraft.wiki/images/Oak_Log_%28UD%29_JE5_BE3.png?8a080"></img></button>
+		<p id="hruska_kliker_mini">1</p>
+
+		<button id="buy1" onclick="buy_stone()">Buy one Stone for 2 Dirt and 2 Oak Logs</button>
+		<button id="buy2" onclick="buy_iron()">Buy one Iron for 4 Dirt and 4 Oak Logs and 1 Stone</button>
+		<button id="buy2" onclick="buy_diamond()">Buy one Diamond for 1 Iron and 10 Stone</button>
+		<p id="stone_label">Stones: 1</p>
+		<p id="iron_label">Iron: 0</p>
+		<p id="diamond_label">Diamonds: 0</p>
+
+		
+
+
+
+	</section>
+
+
+
+
+	<script>
+
+		let stone = 1
+		let iron = 0
+		let diamond = 0
+		
+
+		const dirt = document.getElementById("hruska_kliker")
+
+		function hruska_klik() {
+
+			dirt.innerText = +dirt.innerText + stone
+		}
+
+
+		const wood = document.getElementById("hruska_kliker_mini")
+
+
+		function hruska_klik_mini() {
+
+			wood.innerText = +wood.innerText + stone
+
+
+		}
+
+		function buy_stone() {
+
+			if (dirt.innerText < 2 || wood.innerText < 2) return
+
+			dirt.innerText -= 2
+			wood.innerText -= 2
+			stone = stone + 1
+			
+			stone_label.innerText = "Stones: " + stone
+
+			
+			console.log(wood.innerText)
+			console.log(dirt.innerText)
+			console.log(stone)
+			console.log(iron)
+			console.log(diamond)
+
+
+			
+		}
+
+
+
+		function buy_iron() {
+
+			console.log(wood.innerText)
+			console.log(dirt.innerText)
+			console.log(stone)
+			console.log(iron)
+			console.log(diamond)
+			console.log("asdasd")
+
+
+			if (dirt.innerText < 4 || wood.innerText < 4 || stone < 2) return
+
+			dirt.innerText -= 4
+			wood.innerText -= 4
+			stone -= 1 
+			iron += 1
+
+			stone_label.innerText = "Stones: " + stone
+			iron_label.innerText = "Iron: " + iron
+
+			console.log(wood)
+			console.log(dirt)
+			console.log(stone)
+			console.log(iron)
+			console.log(diamond)
+			
+		}
+
+
+		function buy_diamond() {
+
+
+			if ( iron < 2 || stone < 11) return
+
+			diamond += 1
+			stone -= 10
+			iron -= 1
+
+
+			diamond_label.innerText = "Diamond: " + diamond
+			stone_label.innerText = "Stones: " + stone
+			iron_label.innerText = "Iron: " + iron
+
+
+			console.log(wood)
+			console.log(dirt)
+			console.log(stone)
+			console.log(iron)
+			console.log(diamond)
+			
+		}
+
+
+
+
+
+
+	</script>
+
+
+</body>
+</html>
