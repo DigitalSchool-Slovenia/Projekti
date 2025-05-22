@@ -1,0 +1,54 @@
+ body{background-color: lightskyblue;
+    background-image:url("https://www.securitymagazine.com/ext/resources/2023/01/23/hacker-gc04371cad_1920.jpg?1674482112"); 
+
+ background-repeat: no-repeat;
+background-size: 200%;
+
+}
+ .start{  text-align: center;        
+       
+  padding: 15px;
+  max-width: 600px;         
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  font-size: 25px; 
+margin:0,auto;
+display:block;}
+
+
+
+h1{text-align: center;
+color: white;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+h2{text-align: center;
+color: white;
+font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+.prevara {
+  text-align: center;        
+  margin: 15px auto;        
+  padding: 15px;
+  max-width: 600px;         
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  font-size: 20px; 
+
+
+}
+

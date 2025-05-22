@@ -1,0 +1,68 @@
+h1{
+font-size: 40px;
+background-color: black;
+border-radius: 20px;
+padding:40px;
+color:white;
+margin-left:400px ;
+margin-right: 400px;
+text-align: center;
+box-shadow: 5px 10px grey;
+}
+
+body {
+background-image:url("../slike/hacker.jpg");
+background-repeat: no-repeat;
+background-size: 100%;
+background-size:cover ;
+ }
+.virusi{
+	color: white;
+background-color: blue;
+margin-left:auto ;
+margin-right: auto;
+margin-bottom: ;
+border-radius:20px ;
+padding: 50px;
+font-size: 25px;
+font-family: "Playfair Display", serif;
+font-optical-sizing: auto;
+font-weight: <weight>;
+font-style: normal;
+box-shadow: 5px 10px black;
+width: 80%;
+
+}
+
+.vrste{
+font-size: 25px;
+background-color:red;
+margin-left:auto ;
+margin-right: auto;
+margin-bottom: ;
+border-radius:20px ;
+padding: 50px;	
+box-shadow: 5px 10px black;
+color: white;
+width:80%;
+}
+
+
+h2{
+font-size: 40px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

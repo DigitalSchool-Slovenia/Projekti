@@ -1,0 +1,19 @@
+div{
+    text-align: center;
+    background-color: darkblue;
+    color: lightblue;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+ 
+#title{
+    text-align: center;
+    color: lightblue;
+}
+ 
+body{
+background-image: url(https://askleo.com/wp-content/uploads/2018/10/internet.jpg);
+}
