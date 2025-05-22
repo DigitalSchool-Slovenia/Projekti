@@ -1,0 +1,51 @@
+body{
+	background-image: url("https://starwalk.space/gallery/images/what-is-space/1920x1080.jpg");
+}
+nav{
+	text-align: center;
+	border-bottom: 5px solid white;
+	line-height: 35px;
+	margin-bottom: 20px;
+}
+img{
+	width: 400px;
+	height: 400px;
+}
+p{
+	color: #ffffff;
+}
+ 
+ .grid{
+ 	display: grid;
+ 	grid-template-areas: 
+    "nav nav"
+ 	"slika1 slika2"
+ 	"slika3 pisava";
+ 	grid-template-columns: 1fr 1fr;
+ }
+
+ .pisava{
+ 	grid-area: pisava;
+ 	margin: auto;
+ }
+ .nav{
+ 	grid-area: nav;
+ 	line-height: 35px;
+ 	margin-bottom: 20px;
+ 	color: white;
+ 	
+ }
+ .slika1{
+ 	grid-area: slika1;
+ 	margin: auto;
+ }
+
+ .slika2{
+ 	grid-area: slika2;
+ 	margin: auto;
+ }
+
+ .slika3{
+ 	grid-area: slika3;
+ 	margin: auto;
+ }

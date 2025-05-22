@@ -1,0 +1,45 @@
+.slika{
+	grid-area: slika;
+	width: 30%;
+	height: 30%;
+}
+.grid{
+	display: grid;
+	grid-template-areas:
+	"nav nav"
+	"slika besedilo"
+	"link link";
+	grid-template-columns: 1fr 1fr;
+}
+body{
+	background-image: url(bacgroundimg.jpg);
+
+}
+p{
+	color: white;
+	font-size: 20px;
+}
+h1{
+	color: #e87b7b;
+}
+h2{
+	color: #7fa8eb
+}
+.nav{
+	text-align: center;
+	color: white;
+	line-height: 0px;
+  	text-decoration: none;
+  	font-size: 20px;
+  	margin-top: 15px;
+  	padding: 10px;
+  	grid-area: nav;
+}
+.link {
+	grid-area: link;
+}
+.besedilo{
+	grid-area: besedilo;
+}
+
+	

@@ -1,0 +1,137 @@
+.grid {
+	display: grid;
+	grid-template-areas: 
+	"nav nav"
+	"naslov naslov"
+	"besedilo slika"
+	"naslovrazvoj naslovrazvoj"
+	"razvoj razvoj"
+	"naslovizstrelitev naslovizstrelitev"
+	"izstrelitev izstrelitev"
+	"naslovlastnosti naslovlastnosti"
+	"lastnosti lastnosti"
+	"naslovspekter naslovspekter"
+	"spekter spekter"
+	"naslovpot naslovpot"
+	"slika2 pot";
+
+	grid-template-columns: 1fr 1fr;
+
+}
+
+.besedilo{
+	grid-area: besedilo;
+	margin-left: 20px;
+}
+
+.slika{
+	grid-area: slika;
+	margin-left: 50px;
+}
+
+.nav {
+	grid-area: nav;
+	text-align: center;
+}
+
+.razvoj {
+	grid-area: razvoj;
+	margin-right: 30px;
+	margin-left: 20px;
+}
+
+.naslovizstrelitev {
+
+	display: flex;
+	justify-content: center;
+	grid-area: naslovizstrelitev;
+
+}
+
+.izstrelitev {
+	grid-area: izstrelitev;
+	margin-right: 30px;
+	margin-left: 20px;
+}
+
+.naslovlastnosti{
+
+	grid-area: naslovlastnosti;
+	display: flex;
+	justify-content: center;
+
+}
+
+.lastnosti {
+	grid-area: lastnosti;
+	margin-left: 20px;
+}
+
+.naslovspekter {
+
+	display: flex;
+	justify-content: center;
+	grid-area: naslovspekter;
+
+}
+
+.spekter {
+	grid-area: spekter;
+	margin-left: 20px;
+}
+
+.naslovpot {
+
+	display: flex;
+	justify-content: center;
+	grid-area: naslovpot;
+
+}
+
+.pot {
+	grid-area: pot;
+	margin-left: 5px;
+
+}
+
+.naslov{
+	display: flex;
+	justify-content: center;
+	grid-area: naslov;
+}
+
+.naslovrazvoj {
+	display: flex;
+	justify-content: center;
+	grid-area: naslovrazvoj;
+
+}
+
+img {
+	width: 450px;
+	height: auto;
+	border-radius: 10%;
+}
+
+body {
+
+	background-image: url(galaksija.jpg);
+	background-size: 200vw 355vh;
+
+}
+
+h4 {
+
+	color: white;
+
+}
+
+.slika2 {
+
+	grid-area: slika2;
+	margin-left: 30px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	margin-top: 20px;
+
+}

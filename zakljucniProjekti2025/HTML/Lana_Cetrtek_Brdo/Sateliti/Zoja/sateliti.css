@@ -1,0 +1,79 @@
+.grid{
+	display:grid;
+	grid-template-areas:
+	"naslov naslov"
+	"navigation navigation"
+	"slika1 Sputnik1"
+	"slika2 osnovneinformacije"
+	"slika3 predizstrelitvijo"
+	"desajn desajn";
+	grid-template-columns: 1fr 1fr;
+
+}
+
+.naslov{
+	grid-area: naslov;
+	display: flex;
+	justify-content: center;
+}
+
+.slika1{
+	grid-area: slika1;
+}
+
+.Sputnik1{
+	grid-area: Sputnik1;
+}
+
+.slika2
+{
+	grid-area: slika2;
+}
+
+.osnovneinformacije{
+	grid-area: osnovneinformacije;
+}
+
+.slika3{
+	grid-area: slika3;
+}
+
+.predizstrelitvijo{
+	grid-area: predizstrelitvijo;
+}
+
+.desajn{
+	grid-area: desajn;
+}
+
+.navigation{
+	grid-area: navigation;
+	display: flex;
+	justify-content: center;
+	text-decoration: none;
+	color: white;
+}
+
+.grid
+{
+	grid-area: grid;
+}
+body{
+	background-image: url(https://www.innovationnewsnetwork.com/wp-content/uploads/2021/02/Primordial-galaxy-696x392.jpg);
+	color: white;
+
+}
+
+img
+{
+		height: 200px;
+		width: auto;
+		border-radius: 30%;
+}
+
+
+a
+{
+	text-decoration: none;
+	color: white;
+}
