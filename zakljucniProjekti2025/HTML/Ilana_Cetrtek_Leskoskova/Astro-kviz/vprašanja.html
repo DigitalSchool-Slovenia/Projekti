@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Astro-kviz</title>
+	<link rel="icon" href="content/head-icon.ico" type="image/x-icon">
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Jersey+10&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+	body {
+  		overflow-x: hidden;
+	}
+	#finishscore {
+		font-size: 6.5vw;
+		color: ghostwhite;
+		margin-left: 18vw;
+		margin-top: -9vh;
+		font-family: "Jersey 10";
+	}
+	#zmagovalnapanorama {
+		visibility: hidden;
+		position: absolute;
+	}
+	#crossheader {
+		position: absolute;
+		width: 11vw;
+		height: 19vh;
+		margin-top: -19vh;
+		margin-left: 43vw;
+	}
+	#slash_text_false{
+		color: white;
+		font-size: 2.5vw;
+		font-family: "Jersey 10";
+		position: absolute;
+		white-space: nowrap;
+		top: 0vh;
+	}
+	#naslednje_vprašanje {
+		position: absolute;
+		margin-left: 40vw;
+		margin-top: 13vh;
+		font-family: "Share Tech";
+		white-space: nowrap;
+		font-size: 4vh;
+		visibility: hidden;
+		color: white;
+	}
+	#slash_text_true{
+		color: white;
+		font-size: 2.5vw;
+		font-family: "Jersey 10";
+		position: absolute;
+		white-space: nowrap;
+	}
+	#checkheader {
+		position: absolute;
+		width: 11vw;
+		height: 19vh;
+		margin-top: -19vh;
+		margin-left: 43vw;
+	}
+	#anwsercheck {
+		position: absolute;
+		width: 3.5vw;
+		height: 6vh;
+		margin-top: 31vh;
+		margin-left: 2.5vw;
+	}
+	.povečan{
+		transform: scale(1.03);
+	}
+	.normalnovelik{
+		transform: scale(1.0);
+	}
+	#anwsercross {
+		width: 4.6vw;
+		height: 7.5vh;
+		margin-top: 31vh;
+		margin-left: 2.5vw;
+	}
+	#ordinarypanorama {
+		visibility: visible;
+	}
+	#pravilnapanorama {
+		position: absolute;
+		visibility: hidden;
+	}
+	#napačnapanorama {
+		visibility: hidden;
+		position: absolute;
+	}
+	h1{
+		color: green;
+		font-size: 2.5vw;
+		text-align: center;
+		z-index: 1;
+		margin-top: 2.7vh;
+		font-family: "Jersey 10";
+	}
+	#vprašanje{
+		background-color: whitesmoke;
+		height: 13.8vh;
+		width: 99%;
+		text-align: center;
+		padding: 1vh;
+		font-family: "Jersey 10";
+	}
+	#rdeči_odgovor{
+		z-index: 1;
+		background-color: red;
+		width: 47%;
+		height: 10vh;
+		border-radius: 0.5vw;
+		margin-top: 17%;
+		float: left;
+		margin-left: 1.5vw;
+		border: none;
+		font-family: "Jersey 10";
+		font-size: 2.6vw;
+		cursor: pointer;
+	}
+	#modri_odgovor{
+		z-index: 1;
+		background-color: blue;
+		width: 47%;
+		height: 10vh;
+		border-radius: 0.5vw;
+		float: left;
+		margin-left: 2vw;
+		margin-top: 17%;
+		border: none;
+		font-family: "Jersey 10";
+		font-size: 2.6vw;
+		cursor: pointer;
+	}
+	#rumeni_odgovor{
+		z-index: 1;
+		background-color: yellow;
+		width: 47%;
+		height: 10vh;
+		border-radius: 0.5vw;
+		margin-top: 2%;
+		float: left;
+		margin-left: 1.5vw;
+		border: none;
+		font-family: "Jersey 10";
+		font-size: 2.6vw;
+		cursor: pointer;
+	}
+	#zeleni_odgovor{
+		z-index: 1;
+		background-color: green;
+		width: 47%;
+		height: 10vh;
+		border-radius: 0.5vw;
+		margin-top: 2%;
+		float: left;
+		margin-left: 2vw;
+		border: none;
+		font-family: "Jersey 10";
+		font-size: 2.6vw;
+		cursor: pointer;
+	}
+	#zeleni_odgovor:not(.normalnovelik):hover{
+		transform: scale(1.03);
+		transition: transform 0.2s ease;
+	}
+	#rumeni_odgovor:not(.normalnovelik):hover{
+		transform: scale(1.03);
+		transition: transform 0.2s ease;
+	}
+	#rdeči_odgovor:not(.normalnovelik):hover{
+		transform: scale(1.03);
+		transition: transform 0.2s ease;
+	}
+	#modri_odgovor:not(.normalnovelik):hover{
+		transform: scale(1.03);
+		transition: transform 0.2s ease;
+	}
+	#finishbackground{
+			position: absolute;
+			z-index: -1;
+			left: -0.5vw;
+			right:-0.5vw ;
+			top:-1vh ;
+			height: 110%;
+			width: 110%;
+	}
+	#poskusiznovabutton {
+		 margin-top: 10vh;
+ 		 background-color: #04AA6D; 
+  		 border: none;
+ 		 color: darkgreen;
+ 		 padding: 2.5vw;
+ 		 text-align: center;
+ 		 text-decoration: none;
+		 font-size: 2vw;
+		 width: 20.8vw;
+		 height: 13.8vh;
+		 justify-content: center;
+		 margin-left: 19vw;
+		 border-radius: 5vw;
+		 font-family: "Jersey 10", sans-serif;
+ 		 font-weight: 400;
+		 font-style: normal;
+		 cursor: pointer;
+		}
+	#nazajhomebutton {
+		 margin-top: 10vh;
+ 		 background-color: #04AA6D; 
+  		 border: none;
+ 		 color: darkgreen;
+ 		 padding: 2.5vw;
+ 		 text-align: center;
+ 		 text-decoration: none;
+		 font-size: 2vw;
+		 width: 20.8vw;
+		 height: 13.8vh;
+		 justify-content: center;
+		 margin-left: 19vw;
+		 border-radius: 5vw;
+		 font-family: "Jersey 10", sans-serif;
+ 		 font-weight: 400;
+		 font-style: normal;
+		 cursor: pointer;
+	}
+		
+	#nazajhomebutton {
+			background-color: #bc68fc;
+			color: purple;
+		}
+
+	#nazajhomebutton:hover{
+			transform: scale(1.2);
+			transition: transform 0.2s ease;
+		}
+
+    #poskusiznovabutton:hover{
+       		transform: scale(1.2);
+       		transition: transform 0.2s ease;
+       }
+
+
+	#finishčestitke{
+			color: green;
+			z-index: 1;
+			font-size: 10vw;
+			text-align: center;
+
+		}
+</style>
+</head>
+<body onload="draw()" style="background-image: url('content/vprašanja contestant1.png'); background-size: cover; background-position: center;">
+	<div id="ordinarypanorama">
+		<h1>ASTRO-KVIZ</h1> 
+		<div id="vprašanje">
+			<h1 style="color: black" id="vprašanje-text"></h1>
+		</div>
+	</div>
+		<div id="odgovori">
+			<button id="rdeči_odgovor" onclick="checkRdeči()"></button>
+			<button id="modri_odgovor" onclick="checkModri()">
+			<button id="rumeni_odgovor" onclick="checkRumeni()">
+			<button id="zeleni_odgovor" onclick="checkZeleni()">
+		</div>
+	
+	<div id="pravilnapanorama">
+		<img src="content/anwsercheck.png" id="anwsercheck">
+		<img src="content/check.png" id="checkheader">
+		<p id="slash_text_true"></p>
+	</div>
+	<div id="napačnapanorama">
+		<img src="content/red-cross-x.png" id="crossheader">
+		<img src="content/anwsercross.png" id="anwsercross">
+		<p id="slash_text_false"></p>
+	</div>
+	<p id="naslednje_vprašanje">Naslednje vprašanje v 5...</p>
+	<div id="zmagovalnapanorama" style="position: fixed;">
+		<h1 id="finishčestitke" style="margin-top: -200px; margin-left: 350px; white-space: nowrap;">Čestitke!</h1>
+		<p id="finishscore">TVOJ REZULTAT JE 5/10 TOČK</p>
+		<button id = "poskusiznovabutton" onclick="restart()">Poskusi znova</button>
+		<a href="index.html"><button id="nazajhomebutton">Nazaj na prvo stran</button></a>
+	</div>
+</body>
+<script>
+	var vprašanja = 0
+	let used = []
+	var score = 0
+	var odgovor1 = 0
+	var odgovor2 = 0
+	var odgovor3 = 0
+	var odgovor4 = 0
+	var praviodgovor = 0
+	var ran = 0
+	const wrongeffect = new Audio("content/WrongEffect.mp3");
+	const trueeffect = new Audio("content/CorrectEffect.mp3");
+	const fanfare = new Audio("content/Fanfare.mp3");
+	const endmusic = new Audio("content/Endingmusic.mp3");
+	function debugVars(){
+		alert("ran =" + ran);
+		alert("score =" + score);
+		alert("vprašanja" + vprašanja);
+	}
+	document.addEventListener("keydown", function(event) {
+  		if (event.altKey && event.key === "7") {
+    	finish();
+  }
+});
+	document.addEventListener("keydown", function(event) {
+  		if (event.altKey && event.key === "8") {
+    	score += 1;
+  }
+});
+	document.addEventListener("keydown", function(event) {
+  		if (event.altKey && event.key === "9") {
+    	debugVars()
+  }
+});
+	function debugVars(){
+		alert("ran =" + ran);
+		alert("score =" + score);
+	}
+	function restart(){
+		 document.getElementById("zmagovalnapanorama").style.visibility = "hidden";
+		  document.getElementById("ordinarypanorama").style.visibility = "visible";
+		  document.getElementById("rdeči_odgovor").style.visibility = "visible";
+		  document.getElementById("modri_odgovor").style.visibility = "visible";
+		  document.getElementById("zeleni_odgovor").style.visibility = "visible";
+		  document.getElementById("rumeni_odgovor").style.visibility = "visible";
+		  document.getElementsByTagName("body")[0].style.backgroundImage = 'url("content/vprašanja contestant1.png")';
+		  
+		  score = 0;
+		  used = [];
+		  ran = 0
+		  draw();
+
+		  let nextTrack;
+		  do {
+		    nextTrack = Math.floor(Math.random() * playlist.length);
+		  } while (nextTrack === currentTrack);
+		  currentTrack = nextTrack;
+
+		  fanfare.pause();
+		  fanfare.currentTime = 0;
+		  endmusic.pause();
+		  endmusic.currentTime = 0;
+		  audio.src = playlist[currentTrack].src;
+		  audio.volume = playlist[currentTrack].volume;
+		  audio.play();
+
+	}
+	function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+	}
+	async function slashtrueload() {
+		var slash = Math.floor(Math.random() * 15);
+		if (slash == 0) {
+			document.getElementById("slash_text_true").innerHTML = "Samo srečno ugibanje kajne. . .";
+			document.getElementById("slash_text_true").style.marginLeft = "36vw";
+		}
+		if (slash == 1) {
+			document.getElementById("slash_text_true").innerHTML = "<i> Gah! </i>";
+			document.getElementById("slash_text_true").style.marginLeft = "46vw";
+		}
+		if (slash == 2) {
+			document.getElementById("slash_text_true").innerHTML = "Pa to ne more biti res!";
+			document.getElementById("slash_text_true").style.marginLeft = "38.5vw";
+		}
+		if (slash == 3) {
+			document.getElementById("slash_text_true").innerHTML = "Grrrrrrrr kako ti to uspeva";
+			document.getElementById("slash_text_true").style.marginLeft = "37vw";
+		}
+		if (slash == 4) {
+			document.getElementById("slash_text_true").innerHTML = "Nihče ne premaga Astro-kviza!!!";
+			document.getElementById("slash_text_true").style.marginLeft = "35.5vw";
+		}
+		if (slash == 5) {
+			document.getElementById("slash_text_true").innerHTML = "Slej ko prej se boš zmotil";
+			document.getElementById("slash_text_true").style.marginLeft = "37vw";
+		}
+		if (slash == 6) {
+			document.getElementById("slash_text_true").innerHTML = "Dobro ugibaš...";
+			document.getElementById("slash_text_true").style.marginLeft = "43vw";
+		}
+		if (slash == 7) {
+			document.getElementById("slash_text_true").innerHTML = "<i> An ban pet podgan. . . </i>";
+			document.getElementById("slash_text_true").style.marginLeft = "41vw";
+		}
+		if (slash == 8) {
+			document.getElementById("slash_text_true").innerHTML = ". . .";
+			document.getElementById("slash_text_true").style.marginLeft = "48.5vw";
+		}
+		if (slash == 9) {
+			document.getElementById("slash_text_true").innerHTML = "AArGhhhHh";
+			document.getElementById("slash_text_true").style.marginLeft = "44vw";
+		}
+		if (slash == 10) {
+			document.getElementById("slash_text_true").innerHTML = "Kaj si raketni fizik?!";
+			document.getElementById("slash_text_true").style.marginLeft = "40vw";
+		}
+		if (slash == 11) {
+			document.getElementById("slash_text_true").innerHTML = "Nehaj že googlati";
+			document.getElementById("slash_text_true").style.marginLeft = "41vw";
+		}
+		if (slash == 12) {
+			document.getElementById("slash_text_true").innerHTML = "GOLJUFAŠ";
+			document.getElementById("slash_text_true").style.marginLeft = "44.6vw";
+		}
+		if (slash == 13) {
+			document.getElementById("slash_text_true").innerHTML = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+			document.getElementById("slash_text_true").style.marginLeft = "-50px";
+		}
+		if (slash == 14) {
+			document.getElementById("slash_text_true").innerHTML = "zapri brskalnik takoj";
+			document.getElementById("slash_text_true").style.marginLeft = "40vw";
+		}
+		if (ran <= 10) {
+			document.getElementById("naslednje_vprašanje").style.visibility = "visible";
+			document.getElementById("naslednje_vprašanje").innerText = "Naslednje vprašanje v 5...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").innerText = "Naslednje vprašanje v 4...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").innerText = "Naslednje vprašanje v 3...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").innerText = "Naslednje vprašanje v 2...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").innerText = "Naslednje vprašanje v 1...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").style.visibility = "hidden";
+		}
+		else{
+			document.getElementById("naslednje_vprašanje").style.visibility = "visible";
+			document.getElementById("naslednje_vprašanje").innerText = "Razglasitev rezultatov v 5...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").innerText = "Razglasitev rezultatov v 4...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").innerText = "Razglasitev rezultatov v 3...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").innerText = "Razglasitev rezultatov v 2...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").innerText = "Razglasitev rezultatov v 1...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").style.visibility = "hidden";
+		}
+
+	}
+	async function slasfalseload() {
+		var slash = Math.floor(Math.random() * 15);
+		if (slash == 0) {
+			document.getElementById("slash_text_false").innerHTML = "<i> tako kot sem napovedal </i>";
+			document.getElementById("slash_text_false").style.marginLeft = "38.5vw";
+		}
+		if (slash == 1) {
+			document.getElementById("slash_text_false").innerHTML = "HAHAHAHA";
+			document.getElementById("slash_text_false").style.marginLeft = "45vw";
+		}
+		if (slash == 2) {
+			document.getElementById("slash_text_false").innerHTML = "kviz: 1 ti: 0";
+			document.getElementById("slash_text_false").style.marginLeft = "45vw";
+		}
+		if (slash == 3) {
+			document.getElementById("slash_text_false").innerHTML = "weeeeeeeeeeeeee";
+			document.getElementById("slash_text_false").style.marginLeft = "41vw";
+		}
+		if (slash == 4) {
+			document.getElementById("slash_text_false").innerHTML = "biiiiiiiiiiip!";
+			document.getElementById("slash_text_false").style.marginLeft = "45vw";
+		}
+		if (slash == 5) {
+			document.getElementById("slash_text_false").innerHTML = " <i> *vdih publike v ozadju* </i>";
+			document.getElementById("slash_text_false").style.marginLeft = "38.5vw";
+		}
+		if (slash == 6) {
+			document.getElementById("slash_text_false").innerHTML = "to pa niiii res?!";
+			document.getElementById("slash_text_false").style.marginLeft = "42.5vw";
+		}
+		if (slash == 7) {
+			document.getElementById("slash_text_false").innerHTML = "poskusi znova";
+			document.getElementById("slash_text_false").style.marginLeft = "43vw";
+		}
+		if (slash == 8) {
+			document.getElementById("slash_text_false").innerHTML = "BUM, in še en strike!";
+			document.getElementById("slash_text_false").style.marginLeft = "40.5vw";
+		}
+		if (slash == 9) {
+			document.getElementById("slash_text_false").innerHTML = ":)";
+			document.getElementById("slash_text_false").style.marginLeft = "49vw";
+		}
+		if (slash == 10) {
+			document.getElementById("slash_text_false").innerHTML = "naglej se križca...";
+			document.getElementById("slash_text_false").style.marginLeft = "41.5vw";
+		}
+		if (slash == 11) {
+			document.getElementById("slash_text_false").innerHTML = "čestitam!";
+			document.getElementById("slash_text_false").style.marginLeft = "44.8vw";
+		}
+		if (slash == 12) {
+			document.getElementById("slash_text_false").innerHTML = "Nihče ne premaga Astro-kviza!!!";
+			document.getElementById("slash_text_false").style.marginLeft = "34.5vw";
+		}
+		if (slash == 13) {
+			document.getElementById("slash_text_false").innerHTML = "Obsojen si na 0 let zapora";
+			document.getElementById("slash_text_false").style.marginLeft = "37.5vw";
+		}
+		if (slash == 14) {
+			document.getElementById("slash_text_false").innerHTML = "Samo. še. malo";
+			document.getElementById("slash_text_false").style.marginLeft = "42.7vw";
+		}
+		if (ran <= 10) {
+			document.getElementById("naslednje_vprašanje").style.visibility = "visible";
+			document.getElementById("naslednje_vprašanje").innerText = "Naslednje vprašanje v 5...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").innerText = "Naslednje vprašanje v 4...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").innerText = "Naslednje vprašanje v 3...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").innerText = "Naslednje vprašanje v 2...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").innerText = "Naslednje vprašanje v 1...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").style.visibility = "hidden";
+		}
+		else{
+			document.getElementById("naslednje_vprašanje").style.visibility = "visible";
+			document.getElementById("naslednje_vprašanje").innerText = "Razglasitev rezultatov v 5...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").innerText = "Razglasitev rezultatov v 4...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").innerText = "Razglasitev rezultatov v 3...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").innerText = "Razglasitev rezultatov v 2...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").innerText = "Razglasitev rezultatov v 1...";
+			await sleep(1000);
+			document.getElementById("naslednje_vprašanje").style.visibility = "hidden";
+		}
+		
+	}
+	async function checkRdeči(){
+		if (praviodgovor == 1){
+			score += 1;
+			trueeffect.play()
+			document.getElementById("slash_text_false").innerHTML = "";
+			document.getElementById("ordinarypanorama").style.visibility = "hidden"	;
+			document.getElementById("pravilnapanorama").style.visibility = "visible";
+			document.getElementById("rdeči_odgovor").onclick =function() {};
+			document.getElementById("modri_odgovor").onclick =function() {};
+			document.getElementById("rumeni_odgovor").onclick =function() {};
+			document.getElementById("zeleni_odgovor").onclick =function() {};
+			document.getElementById("anwsercheck").style.marginLeft = "2.4vw";
+			document.getElementById("anwsercheck").style.marginTop = "37vh";
+			document.getElementById("rdeči_odgovor").style.border = "0.6vw solid lime";
+			document.getElementById("rdeči_odgovor").className = "povečan";
+			document.getElementById("modri_odgovor").className = "normalnovelik";
+			document.getElementById("rumeni_odgovor").className = "normalnovelik";
+			document.getElementById("zeleni_odgovor").className = "normalnovelik";
+			document.getElementById("modri_odgovor").style.backgroundColor = "gray";
+			document.getElementById("rumeni_odgovor").style.backgroundColor = "gray";
+			document.getElementById("zeleni_odgovor").style.backgroundColor = "gray";
+			slashtrueload();
+			await sleep(5000);
+			document.getElementById("ordinarypanorama").style.visibility = "visible";
+			document.getElementById("pravilnapanorama").style.visibility = "hidden";
+			document.getElementById("rdeči_odgovor").onclick =checkRdeči;
+			document.getElementById("modri_odgovor").onclick =checkModri;
+			document.getElementById("rumeni_odgovor").onclick =checkRumeni;
+			document.getElementById("zeleni_odgovor").onclick =checkZeleni;
+			document.getElementById("rdeči_odgovor").style.border = "none";
+			document.getElementById("rdeči_odgovor").className = "";
+			document.getElementById("modri_odgovor").className = "";
+			document.getElementById("rumeni_odgovor").className = "";
+			document.getElementById("zeleni_odgovor").className = "";
+			document.getElementById("modri_odgovor").style.backgroundColor = "blue";
+			document.getElementById("rumeni_odgovor").style.backgroundColor = "yellow";
+			document.getElementById("zeleni_odgovor").style.backgroundColor = "green";
+			draw();
+		}
+		else {
+			wrongeffect.play()
+			document.getElementById("slash_text_true").innerHTML = "";
+			document.getElementById("ordinarypanorama").style.visibility = "hidden";
+			document.getElementById("napačnapanorama").style.visibility = "visible";
+			document.getElementById("anwsercross").style.marginLeft = "2vw";
+			document.getElementById("anwsercross").style.marginTop = "36.5vh";
+			document.getElementById("rdeči_odgovor").onclick =function() {};
+			document.getElementById("modri_odgovor").onclick =function() {};
+			document.getElementById("rumeni_odgovor").onclick =function() {};
+			document.getElementById("zeleni_odgovor").onclick =function() {};
+			document.getElementById("rdeči_odgovor").style.border = "0.6vw solid darkred";
+			document.getElementById("rdeči_odgovor").className = "povečan";
+			document.getElementById("modri_odgovor").className = "normalnovelik";
+			document.getElementById("rumeni_odgovor").className = "normalnovelik";
+			document.getElementById("zeleni_odgovor").className = "normalnovelik";
+			document.getElementById("modri_odgovor").style.backgroundColor = "gray";
+			document.getElementById("rumeni_odgovor").style.backgroundColor = "gray";
+			document.getElementById("zeleni_odgovor").style.backgroundColor = "gray";
+			slasfalseload();
+			if (praviodgovor == 2) {
+				document.getElementById("modri_odgovor").style.backgroundColor = "lime";
+			}
+			if (praviodgovor == 3) {
+				document.getElementById("rumeni_odgovor").style.backgroundColor = "lime";
+			}
+			if (praviodgovor == 4) {
+				document.getElementById("zeleni_odgovor").style.backgroundColor = "lime";
+			}
+			await sleep(5000);
+			document.getElementById("ordinarypanorama").style.visibility = "visible";
+			document.getElementById("napačnapanorama").style.visibility = "hidden";
+			document.getElementById("rdeči_odgovor").style.border = "none";
+			document.getElementById("rdeči_odgovor").className = "";
+			document.getElementById("modri_odgovor").className = "";
+			document.getElementById("rumeni_odgovor").className = "";
+			document.getElementById("zeleni_odgovor").className = "";
+			document.getElementById("modri_odgovor").style.backgroundColor = "blue";
+			document.getElementById("rumeni_odgovor").style.backgroundColor = "yellow";
+			document.getElementById("zeleni_odgovor").style.backgroundColor = "green";
+			document.getElementById("rdeči_odgovor").onclick =checkRdeči;
+			document.getElementById("modri_odgovor").onclick =checkModri;
+			document.getElementById("rumeni_odgovor").onclick =checkRumeni;
+			document.getElementById("zeleni_odgovor").onclick =checkZeleni;
+			draw()
+		}
+	}
+	async function checkModri() {
+		if (praviodgovor == 2){
+			score += 1;
+			trueeffect.play()
+			document.getElementById("slash_text_false").innerHTML = "";
+			document.getElementById("ordinarypanorama").style.visibility = "hidden"	;
+			document.getElementById("pravilnapanorama").style.visibility = "visible";
+			document.getElementById("rdeči_odgovor").onclick =function() {};
+			document.getElementById("modri_odgovor").onclick =function() {};
+			document.getElementById("rumeni_odgovor").onclick =function() {};
+			document.getElementById("zeleni_odgovor").onclick =function() {};
+			document.getElementById("modri_odgovor").style.border = "0.6vw solid lime";
+			document.getElementById("modri_odgovor").className = "povečan";
+			document.getElementById("rdeči_odgovor").className = "normalnovelik";
+			document.getElementById("rumeni_odgovor").className = "normalnovelik";
+			document.getElementById("zeleni_odgovor").className = "normalnovelik";
+			document.getElementById("rdeči_odgovor").style.backgroundColor = "gray";
+			document.getElementById("rumeni_odgovor").style.backgroundColor = "gray";
+			document.getElementById("zeleni_odgovor").style.backgroundColor = "gray";
+			document.getElementById("anwsercheck").style.marginLeft = "50vw";
+			document.getElementById("anwsercheck").style.marginTop = "37vh";
+			slashtrueload();
+			await sleep(5000)
+			document.getElementById("ordinarypanorama").style.visibility = "visible";
+			document.getElementById("pravilnapanorama").style.visibility = "hidden";
+			document.getElementById("modri_odgovor").style.border = "none";
+			document.getElementById("rdeči_odgovor").className = "";
+			document.getElementById("modri_odgovor").className = "";
+			document.getElementById("rumeni_odgovor").className = "";
+			document.getElementById("zeleni_odgovor").className = "";
+			document.getElementById("rdeči_odgovor").style.backgroundColor = "red";
+			document.getElementById("rumeni_odgovor").style.backgroundColor = "yellow";
+			document.getElementById("zeleni_odgovor").style.backgroundColor = "green";
+			document.getElementById("rdeči_odgovor").onclick =checkRdeči;
+			document.getElementById("modri_odgovor").onclick =checkModri;
+			document.getElementById("rumeni_odgovor").onclick =checkRumeni;
+			document.getElementById("zeleni_odgovor").onclick =checkZeleni;
+			draw()
+		}
+		else {
+			wrongeffect.play()
+			document.getElementById("slash_text_true").innerHTML = "";
+			document.getElementById("ordinarypanorama").style.visibility = "hidden"	;
+			document.getElementById("napačnapanorama").style.visibility = "visible";
+			document.getElementById("rdeči_odgovor").onclick =function() {};
+			document.getElementById("modri_odgovor").onclick =function() {};
+			document.getElementById("rumeni_odgovor").onclick =function() {};
+			document.getElementById("zeleni_odgovor").onclick =function() {};
+			document.getElementById("modri_odgovor").style.border = "0.6vw solid darkred";
+			document.getElementById("modri_odgovor").className = "povečan";
+			document.getElementById("rdeči_odgovor").className = "normalnovelik";
+			document.getElementById("rumeni_odgovor").className = "normalnovelik";
+			document.getElementById("zeleni_odgovor").className = "normalnovelik";
+			document.getElementById("rdeči_odgovor").style.backgroundColor = "gray";
+			document.getElementById("rumeni_odgovor").style.backgroundColor = "gray";
+			document.getElementById("zeleni_odgovor").style.backgroundColor = "gray";
+			document.getElementById("anwsercross").style.marginLeft = "50vw";
+			document.getElementById("anwsercross").style.marginTop = "36.5vh";
+			slasfalseload();
+			if (praviodgovor == 1) {
+				document.getElementById("rdeči_odgovor").style.backgroundColor = "lime";
+			}
+			if (praviodgovor == 3) {
+				document.getElementById("rumeni_odgovor").style.backgroundColor = "lime";
+			}
+			if (praviodgovor == 4) {
+				document.getElementById("zeleni_odgovor").style.backgroundColor = "lime";
+			}
+			await sleep(5000)
+			document.getElementById("ordinarypanorama").style.visibility = "visible";
+			document.getElementById("napačnapanorama").style.visibility = "hidden";
+			document.getElementById("modri_odgovor").style.border = "none";
+			document.getElementById("rdeči_odgovor").className = "";
+			document.getElementById("modri_odgovor").className = "";
+			document.getElementById("rumeni_odgovor").className = "";
+			document.getElementById("zeleni_odgovor").className = "";
+			document.getElementById("rdeči_odgovor").style.backgroundColor = "red";
+			document.getElementById("rumeni_odgovor").style.backgroundColor = "yellow";
+			document.getElementById("zeleni_odgovor").style.backgroundColor = "green";
+			document.getElementById("rdeči_odgovor").onclick =checkRdeči;
+			document.getElementById("modri_odgovor").onclick =checkModri;
+			document.getElementById("rumeni_odgovor").onclick =checkRumeni;
+			document.getElementById("zeleni_odgovor").onclick =checkZeleni;
+			draw()
+		}
+	}
+	async function checkRumeni() {
+		if (praviodgovor == 3){
+			score += 1;
+			trueeffect.play()
+			document.getElementById("slash_text_false").innerHTML = "";
+			document.getElementById("ordinarypanorama").style.visibility = "hidden"	;
+			document.getElementById("pravilnapanorama").style.visibility = "visible";
+			document.getElementById("rdeči_odgovor").onclick =function() {};
+			document.getElementById("modri_odgovor").onclick =function() {};
+			document.getElementById("rumeni_odgovor").onclick =function() {};
+			document.getElementById("zeleni_odgovor").onclick =function() {};
+			document.getElementById("rumeni_odgovor").style.border = "0.6vw solid lime";
+			document.getElementById("rumeni_odgovor").className = "povečan";
+			document.getElementById("rdeči_odgovor").className = "normalnovelik";
+			document.getElementById("modri_odgovor").className = "normalnovelik";
+			document.getElementById("zeleni_odgovor").className = "normalnovelik";
+			document.getElementById("rdeči_odgovor").style.backgroundColor = "gray";
+			document.getElementById("modri_odgovor").style.backgroundColor = "gray";
+			document.getElementById("zeleni_odgovor").style.backgroundColor = "gray";
+			document.getElementById("anwsercheck").style.marginLeft = "2.4vw";
+			document.getElementById("anwsercheck").style.marginTop = "51.5vh";
+			slashtrueload();
+			await sleep(5000)
+			document.getElementById("ordinarypanorama").style.visibility = "visible";
+			document.getElementById("pravilnapanorama").style.visibility = "hidden";
+			document.getElementById("rumeni_odgovor").style.border = "none";
+			document.getElementById("rdeči_odgovor").className = "";
+			document.getElementById("modri_odgovor").className = "";
+			document.getElementById("rumeni_odgovor").className = "";
+			document.getElementById("zeleni_odgovor").className = "";
+			document.getElementById("rdeči_odgovor").style.backgroundColor = "red";
+			document.getElementById("modri_odgovor").style.backgroundColor = "blue";
+			document.getElementById("zeleni_odgovor").style.backgroundColor = "green";
+			document.getElementById("rdeči_odgovor").onclick =checkRdeči;
+			document.getElementById("modri_odgovor").onclick =checkModri;
+			document.getElementById("rumeni_odgovor").onclick =checkRumeni;
+			document.getElementById("zeleni_odgovor").onclick =checkZeleni;
+			draw()
+		}
+		else {
+			wrongeffect.play()
+			document.getElementById("slash_text_true").innerHTML = "";
+			document.getElementById("ordinarypanorama").style.visibility = "hidden"	;
+			document.getElementById("napačnapanorama").style.visibility = "visible";
+			document.getElementById("rdeči_odgovor").onclick =function() {};
+			document.getElementById("modri_odgovor").onclick =function() {};
+			document.getElementById("rumeni_odgovor").onclick =function() {};
+			document.getElementById("zeleni_odgovor").onclick =function() {};
+			document.getElementById("rumeni_odgovor").style.border = "0.6vw solid darkred";
+			document.getElementById("rumeni_odgovor").className = "povečan";
+			document.getElementById("rdeči_odgovor").className = "normalnovelik";
+			document.getElementById("modri_odgovor").className = "normalnovelik";
+			document.getElementById("zeleni_odgovor").className = "normalnovelik";
+			document.getElementById("rdeči_odgovor").style.backgroundColor = "gray";
+			document.getElementById("modri_odgovor").style.backgroundColor = "gray";
+			document.getElementById("zeleni_odgovor").style.backgroundColor = "gray";
+			document.getElementById("anwsercross").style.marginLeft = "2.3vw";
+			document.getElementById("anwsercross").style.marginTop = "51vh";
+			slasfalseload();
+			if (praviodgovor == 2) {
+				document.getElementById("modri_odgovor").style.backgroundColor = "lime";
+			}
+			if (praviodgovor == 1) {
+				document.getElementById("rdeči_odgovor").style.backgroundColor = "lime";
+			}
+			if (praviodgovor == 4) {
+				document.getElementById("zeleni_odgovor").style.backgroundColor = "lime";
+			}
+			await sleep(5000)
+			document.getElementById("ordinarypanorama").style.visibility = "visible";
+			document.getElementById("napačnapanorama").style.visibility = "hidden";
+			document.getElementById("rumeni_odgovor").style.border = "none";
+			document.getElementById("rdeči_odgovor").className = "";
+			document.getElementById("modri_odgovor").className = "";
+			document.getElementById("rumeni_odgovor").className = "";
+			document.getElementById("zeleni_odgovor").className = "";
+			document.getElementById("rdeči_odgovor").style.backgroundColor = "red";
+			document.getElementById("modri_odgovor").style.backgroundColor = "blue";
+			document.getElementById("zeleni_odgovor").style.backgroundColor = "green";
+			document.getElementById("rdeči_odgovor").onclick =checkRdeči;
+			document.getElementById("modri_odgovor").onclick =checkModri;
+			document.getElementById("rumeni_odgovor").onclick =checkRumeni;
+			document.getElementById("zeleni_odgovor").onclick =checkZeleni;
+			draw()
+		}
+	}
+	async function checkZeleni() {
+		if (praviodgovor == 4){
+			score += 1
+			trueeffect.play()
+			document.getElementById("slash_text_false").innerHTML = "";
+			document.getElementById("ordinarypanorama").style.visibility = "hidden"	;
+			document.getElementById("pravilnapanorama").style.visibility = "visible";
+			document.getElementById("rdeči_odgovor").onclick = function() {};
+			document.getElementById("modri_odgovor").onclick = function() {};
+			document.getElementById("rumeni_odgovor").onclick = function() {};
+			document.getElementById("zeleni_odgovor").onclick = function() {};
+			document.getElementById("zeleni_odgovor").style.border = "0.6vw solid lime";
+			document.getElementById("zeleni_odgovor").className = "povečan";
+			document.getElementById("rdeči_odgovor").className = "normalnovelik";
+			document.getElementById("modri_odgovor").className = "normalnovelik";
+			document.getElementById("rumeni_odgovor").className = "normalnovelik";
+			document.getElementById("rdeči_odgovor").style.backgroundColor = "gray";
+			document.getElementById("modri_odgovor").style.backgroundColor = "gray";
+			document.getElementById("rumeni_odgovor").style.backgroundColor = "gray";
+			document.getElementById("anwsercheck").style.marginLeft = "50vw";
+			document.getElementById("anwsercheck").style.marginTop = "51.5vh";
+			slashtrueload();
+			await sleep(5000)
+			document.getElementById("ordinarypanorama").style.visibility = "visible";
+			document.getElementById("pravilnapanorama").style.visibility = "hidden";
+			document.getElementById("rdeči_odgovor").onclick =checkRdeči;
+			document.getElementById("modri_odgovor").onclick =checkModri;
+			document.getElementById("rumeni_odgovor").onclick =checkRumeni;
+			document.getElementById("zeleni_odgovor").onclick =checkZeleni;
+			document.getElementById("zeleni_odgovor").style.border = "none";
+			document.getElementById("rdeči_odgovor").className = "";
+			document.getElementById("modri_odgovor").className = "";
+			document.getElementById("rumeni_odgovor").className = "";
+			document.getElementById("zeleni_odgovor").className = "";
+			document.getElementById("rdeči_odgovor").style.backgroundColor = "red";
+			document.getElementById("modri_odgovor").style.backgroundColor = "blue";
+			document.getElementById("rumeni_odgovor").style.backgroundColor = "yellow";
+			draw()
+		}
+		else {
+			wrongeffect.play()
+			document.getElementById("slash_text_true").innerHTML = "";
+			document.getElementById("ordinarypanorama").style.visibility = "hidden"	;
+			document.getElementById("napačnapanorama").style.visibility = "visible";
+			document.getElementById("rdeči_odgovor").onclick = function() {};
+			document.getElementById("modri_odgovor").onclick =function() {};
+			document.getElementById("rumeni_odgovor").onclick =function() {};
+			document.getElementById("zeleni_odgovor").onclick =function() {};
+			document.getElementById("zeleni_odgovor").style.border = "12px solid darkred";
+			document.getElementById("zeleni_odgovor").className = "povečan";
+			document.getElementById("rdeči_odgovor").className = "normalnovelik";
+			document.getElementById("modri_odgovor").className = "normalnovelik";
+			document.getElementById("rumeni_odgovor").className = "normalnovelik";
+			document.getElementById("rdeči_odgovor").style.backgroundColor = "gray";
+			document.getElementById("modri_odgovor").style.backgroundColor = "gray";
+			document.getElementById("rumeni_odgovor").style.backgroundColor = "gray";
+			document.getElementById("anwsercross").style.marginLeft = "50vw";
+			document.getElementById("anwsercross").style.marginTop = "51vh";
+			slasfalseload();
+			if (praviodgovor == 2) {
+				document.getElementById("modri_odgovor").style.backgroundColor = "lime";
+			}
+			if (praviodgovor == 3) {
+				document.getElementById("rumeni_odgovor").style.backgroundColor = "lime";
+			}
+			if (praviodgovor == 1) {
+				document.getElementById("rdeči_odgovor").style.backgroundColor = "lime";
+			}
+			await sleep(5000)
+			document.getElementById("ordinarypanorama").style.visibility = "visible";
+			document.getElementById("napačnapanorama").style.visibility = "hidden";
+			document.getElementById("zeleni_odgovor").style.border = "none";
+			document.getElementById("rdeči_odgovor").className = "";
+			document.getElementById("modri_odgovor").className = "";
+			document.getElementById("rumeni_odgovor").className = "";
+			document.getElementById("zeleni_odgovor").className = "";
+			document.getElementById("rdeči_odgovor").style.backgroundColor = "red";
+			document.getElementById("modri_odgovor").style.backgroundColor = "blue";
+			document.getElementById("rumeni_odgovor").style.backgroundColor = "yellow";
+			document.getElementById("rdeči_odgovor").onclick =checkRdeči;
+			document.getElementById("modri_odgovor").onclick =checkModri;
+			document.getElementById("rumeni_odgovor").onclick =checkRumeni;
+			document.getElementById("zeleni_odgovor").onclick =checkZeleni;
+			draw()
+		}
+	}
+	function finish() {
+		audio.pause();
+		audio.currentTime = 0;
+		document.getElementById("zmagovalnapanorama").style.visibility = "visible"
+		document.getElementById("ordinarypanorama").style.visibility = "hidden"
+		document.getElementById("rdeči_odgovor").style.visibility = "hidden"
+		document.getElementById("modri_odgovor").style.visibility = "hidden"
+		document.getElementById("zeleni_odgovor").style.visibility = "hidden"
+		document.getElementById("rumeni_odgovor").style.visibility = "hidden"
+		document.getElementsByTagName("body")[0].style.backgroundImage = 'url("content/starry-sky-purple-2880x1800-21278.jpg")';
+
+		if (score < 1) {
+			document.getElementById("finishscore").innerHTML = "TVOJ REZULTAT JE <b>" + score + "/10 </b> TOČK"
+			document.getElementById("finishčestitke").innerHTML = "VEDELI SMO VES ČAS!!!"
+			document.getElementById("finishčestitke").style.marginLeft = "13.5vw"
+			document.getElementById("finishčestitke").style.color = "red"
+			document.getElementById("finishscore").style.color = "white"
+			wrongeffect.play()
+			endmusic.play()
+		}
+		else if (score > 0 && score < 5) {
+			document.getElementById("finishscore").innerHTML = "TVOJ REZULTAT JE <b>" + score + "/10 </b> TOČK"
+			document.getElementById("finishčestitke").innerHTML = "NO JA ..."
+			document.getElementById("finishčestitke").style.marginLeft = "18vw"
+			document.getElementById("finishčestitke").style.color = "green"
+			document.getElementById("finishscore").style.color = "white"
+			endmusic.play()
+		}
+		else if (score > 4 && score < 10) {
+			document.getElementById("finishscore").innerHTML = "TVOJ REZULTAT JE <b>" + score + "/10 </b> TOČK"
+			document.getElementById("finishčestitke").innerHTML = "ČESTITKE"
+			document.getElementById("finishčestitke").style.marginLeft = "18vw"
+			document.getElementById("finishčestitke").style.color = "green"
+			document.getElementById("finishscore").style.color = "white"
+			endmusic.play()
+		}
+		else if (score > 9) {
+			document.getElementById("finishscore").innerHTML = "TVOJ REZULTAT JE <b>" + score + "/10 </b> TOČK"
+			document.getElementById("finishčestitke").innerHTML = "O MOJ BOG NE MOREMO VERJETI"
+			document.getElementById("finishčestitke").style.color = "purple"
+			document.getElementById("finishscore").style.color = "gold"
+			document.getElementById("finishčestitke").style.marginLeft = "1vw"
+			fanfare.play()
+		}
+		
+
+	}
+	function draw() {
+		if (ran <= 10){
+			var num_vprašanja = Math.floor(Math.random() * 41);
+			if (num_vprašanja == 0) {
+				if (used.includes(0)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(0);
+					document.getElementById("vprašanje-text").innerHTML = "Koliko kilometrov je od zemlje oddaljena Mednarodna vesoljska postaja?"
+					odgovor1 = "340km"
+					odgovor2 = "230km"
+					odgovor3 = "400km"
+					odgovor4 = "500km"
+					praviodgovor = 3
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+
+			}
+			if (num_vprašanja == 1) {
+				if (used.includes(1)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(1);
+					document.getElementById("vprašanje-text").innerHTML = "Katera galaksija je najbližje Mlečni cesti?"
+					odgovor1 = "Messier 31"
+					odgovor2 = "IC 1613 "
+					odgovor3 = "NGC 6822"
+					odgovor4 = "Messier 33"
+					praviodgovor = 1
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+			}
+			if (num_vprašanja == 2) {
+				if (used.includes(2)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(2);
+					document.getElementById("vprašanje-text").innerHTML = "Katera je bila prva ženska v vesolju?"
+					odgovor1 = "Sally Ride"
+					odgovor2 = "Valentina Tereškova "
+					odgovor3 = "Peggy Whitson"
+					odgovor4 = "Mae Jemisson"
+					praviodgovor = 2
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+
+			}
+			if (num_vprašanja == 3) {
+				if (used.includes(3)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(3);
+					document.getElementById("vprašanje-text").innerHTML = "Ime ladje na kateri je bila psička Lajka"
+					odgovor1 = "Luna 2"
+					odgovor2 = "Mercury-Redstone 3"
+					odgovor3 = "Vostok 1"
+					odgovor4 = "Sputnik 2"
+					praviodgovor = 4
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+			}
+			if (num_vprašanja == 4) {
+				if (used.includes(4)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(4);
+					document.getElementById("vprašanje-text").innerHTML = "Približno koliko raket s posadko je že poletelo v vesolje?"
+					odgovor1 = "300"
+					odgovor2 = "400"
+					odgovor3 = "100"
+					odgovor4 = "200"
+					praviodgovor = 2
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+			}
+			if (num_vprašanja == 5) {
+				if (used.includes(5)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(5);
+					document.getElementById("vprašanje-text").innerHTML = "Prvi kitajec v vesolju"
+					odgovor1 = "Yang Liwei"
+					odgovor2 = "Liu Yang"
+					odgovor3 = "Zhai Zhigang"
+					odgovor4 = "Nie Haisheng"
+					praviodgovor = 1
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+			}
+			if (num_vprašanja == 6) {
+				if (used.includes(6)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(6);
+					document.getElementById("vprašanje-text").innerHTML = "Približno koliko stane NAS-ina vesoljska obleka"
+					odgovor1 = "139-175mio $"
+					odgovor2 = "45-97mio$"
+					odgovor3 = "83-122mio $"
+					odgovor4 = "12-57mio $"
+					praviodgovor = 4
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+			}
+			if (num_vprašanja == 7) {
+				if (used.includes(7)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(7);
+					document.getElementById("vprašanje-text").innerHTML = "Koliko časa traja trening za posadko na raketi?"
+					odgovor1 = "1,5 let"
+					odgovor2 = "2 leti "
+					odgovor3 = "3 leta"
+					odgovor4 = "1 leto"
+					praviodgovor = 2
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+			}
+			if (num_vprašanja == 8) {
+				if (used.includes(8)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(8);
+					document.getElementById("vprašanje-text").innerHTML = "Obseg Sonca"
+					odgovor1 = "3,67mio km"
+					odgovor2 = "4,379mio km"
+					odgovor3 = "5,787mio km"
+					odgovor4 = "6,114mio km"
+					praviodgovor = 2
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+			}
+			if (num_vprašanja == 9) {
+				if (used.includes(9)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(9);
+					document.getElementById("vprašanje-text").innerHTML = "Obseg Zemlje"
+					odgovor1 = "24 546 km"
+					odgovor2 = "57 980 km"
+					odgovor3 = "31 723 km"
+					odgovor4 = "40 075 km"
+					praviodgovor = 4
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+			}
+			if (num_vprašanja == 10) {
+				if (used.includes(10)){
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(10);
+					document.getElementById("vprašanje-text").innerHTML = "Obseg Lune"
+					odgovor1 = "7 680 km"
+					odgovor2 = "28 567 km"
+					odgovor3 = "10 921 km"
+					odgovor4 = "14 784 km"
+					praviodgovor = 3
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}	
+			}
+			if (num_vprašanja == 11) {
+				if (used.includes(11)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(11);
+					document.getElementById("vprašanje-text").innerHTML = "Temperatura Sončevega površja"
+					odgovor1 = "5500 °C"
+					odgovor2 = "4600 °C"
+					odgovor3 = "3900 °C"
+					odgovor4 = "7651 °C"
+					praviodgovor = 1
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+			}
+			if (num_vprašanja == 12) {
+				if (used.includes(12)){
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(12);
+					document.getElementById("vprašanje-text").innerHTML = "Temperatura Jupitrovega jedra"
+					odgovor1 = "25 000 °C"
+					odgovor2 = "10 000 °C"
+					odgovor3 = "15 000 °C"
+					odgovor4 = "30 000 °C"
+					praviodgovor = 4
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+			}
+			if (num_vprašanja == 13) {
+				if (used.includes(13)){
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(13);
+					document.getElementById("vprašanje-text").innerHTML = "Koliko odkritih lun ima Saturn?"
+					odgovor1 = "95"
+					odgovor2 = "164"
+					odgovor3 = "51"
+					odgovor4 = "179"
+					praviodgovor = 2
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+			}
+			if (num_vprašanja == 14) {
+				if (used.includes(14)){
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(14);
+					document.getElementById("vprašanje-text").innerHTML = "Koliko litrov goriva porabi običajna raketa za pot na Luno?"
+					odgovor1 = "45 000l"
+					odgovor2 = "30 000l"
+					odgovor3 = "60 000l"
+					odgovor4 = "37 000l"
+					praviodgovor = 1
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+			}
+			if (num_vprašanja == 15) {	
+				if (used.includes(15)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(15);
+					document.getElementById("vprašanje-text").innerHTML = "Razdalja od Zemlje do Neptuna"
+					odgovor1 = "2,1 mrd km"
+					odgovor2 = "1,5mrd km"
+					odgovor3 = "3,5mrd km "
+					odgovor4 = "4,6mrd km"
+					praviodgovor = 4
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+			}
+			if (num_vprašanja == 16) {
+				if (used.includes(16)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(16);
+					document.getElementById("vprašanje-text").innerHTML = "Koliko umetnih satelitov je trenutno v vesolju?"
+					odgovor1 = "9638"
+					odgovor2 = "11674"
+					odgovor3 = "12994 "
+					odgovor4 = "8471"
+					praviodgovor = 3
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+			}
+			if (num_vprašanja == 17) {
+				if (used.includes(17)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(17);
+					document.getElementById("vprašanje-text").innerHTML = "Kolikšna je življenska doba običajne zvezde?"
+					odgovor1 = "17mrd let"
+					odgovor2 = "4mrd let"
+					odgovor3 = "10mrd let "
+					odgovor4 = "23mrd let"
+					praviodgovor = 3
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+			if (num_vprašanja == 18) {
+				if (used.includes(18)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(18);
+					document.getElementById("vprašanje-text").innerHTML = "Temperatura Sončevega jedra"
+					odgovor1 = "15mio °C"
+					odgovor2 = "24mio °C"
+					odgovor3 = "11mio °C "
+					odgovor4 = "7mio °C"
+					praviodgovor = 1
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+			}
+			if (num_vprašanja == 19) {
+				if (used.includes(19)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(19);
+					document.getElementById("vprašanje-text").innerHTML = "Temperatura Neptunovega površja"
+					odgovor1 = "-278°C"
+					odgovor2 = "-353 °C"
+					odgovor3 = "-197 °C "
+					odgovor4 = "-218 °C"
+					praviodgovor = 4
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+				
+			}
+			if (num_vprašanja == 20) {
+				if (used.includes(20)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(20);
+					document.getElementById("vprašanje-text").innerHTML = "Temperatura na površju Jupitrove lune Io med vulkanskimi izbruhi"
+					odgovor1 = "1600 °C"
+					odgovor2 = "800 °C"
+					odgovor3 = "500 °C"
+					odgovor4 = "1200 °C"
+					praviodgovor = 1
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+			if (num_vprašanja == 21) {
+				if (used.includes(21)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(21);
+					document.getElementById("vprašanje-text").innerHTML = "Temperatura v središču rdečega supervelikana Betelgeza?"
+					odgovor1 = "40.000 °C"
+					odgovor2 = "71.000 °C"
+					odgovor3 = "85.000 °C"
+					odgovor4 = "111.000 °C"
+					praviodgovor = 3
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+			if (num_vprašanja == 22) {
+				if (used.includes(22)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(22);
+					document.getElementById("vprašanje-text").innerHTML = "Najnižja izmerjena temperatura v vesolju?"
+					odgovor1 = "-355 °C"
+					odgovor2 = "-189 °C"
+					odgovor3 = "-273 °C"
+					odgovor4 = "-418 °C"
+					praviodgovor = 3
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+			if (num_vprašanja == 23) {
+				if (used.includes(23)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(23);
+					document.getElementById("vprašanje-text").innerHTML = "Temperatura med oblakom prahu okoli supermasivne črne luknje v središču galaksije M87?"
+					odgovor1 = "2000 °C"
+					odgovor2 = "600 °C"
+					odgovor3 = "1200 °C"
+					odgovor4 = "3900 °C"
+					praviodgovor = 4
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+			if (num_vprašanja == 24) {
+				if (used.includes(24)) {
+					draw()
+				}
+				else{
+					ran += 1
+					used.push(24);
+					document.getElementById("vprašanje-text").innerHTML = "Temperatura razgrete plazme okoli neutronskih zvezd?"
+					odgovor1 = "1.000.000.000 °C"
+					odgovor2 = "10.000.000 °C"
+					odgovor3 = "100.000.000 °C"
+					odgovor4 = "1.000.000 °C"
+					praviodgovor = 3
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+			if (num_vprašanja == 25) {
+				if (used.includes(25)) {
+					draw()
+				}
+				else {
+					ran += 1
+					used.push(25);
+					document.getElementById("vprašanje-text").innerHTML = "Kolikšna je bila dolžina prve radijske komunikacije z luno?"
+					odgovor1 = "1,31 sekunde"
+					odgovor2 = "2,54 sekunde"
+					odgovor3 = "3,61 sekunde"
+					odgovor4 = "5,39 sekunde"
+					praviodgovor = 2
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+			if (num_vprašanja == 26) {
+				if (used.includes(26)) {
+					draw()
+				}
+				else {
+					ran += 1
+					used.push(26);
+					document.getElementById("vprašanje-text").innerHTML = "Kolikokrat na sekundo Zemlja prepotuje lastno dolžino v orbiti?"
+					odgovor1 = "21,4"
+					odgovor2 = "29,7"
+					odgovor3 = "36,3"
+					odgovor4 = "12,1"
+					praviodgovor = 2
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+			if (num_vprašanja == 27) {
+				if (used.includes(27)) {
+					draw()
+				}
+				else {
+					ran += 1
+					used.push(27);
+					document.getElementById("vprašanje-text").innerHTML = "Kolikšna je bila masa prvega umetnega satelita (Sputnik 1)?"
+					odgovor1 = "52,3 kg"
+					odgovor2 = "68,0 kg"
+					odgovor3 = "71,5 kg"
+					odgovor4 = "83,6 kg"
+					praviodgovor = 4
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+			if (num_vprašanja == 28) {
+				if (used.includes(28)) {
+					draw()
+				}
+				else {
+					ran += 1
+					used.push(28);
+					document.getElementById("vprašanje-text").innerHTML = "Koliko dni je trajala misija Voyager 1 do meje Heliosfere?"
+					odgovor1 = "15720"
+					odgovor2 = "12541"
+					odgovor3 = "9520"
+					odgovor4 = "17841"
+					praviodgovor = 2
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+			if (num_vprašanja == 29) {
+				if (used.includes(29)) {
+					draw()
+				}
+				else {
+					ran += 1
+					used.push(29);
+					document.getElementById("vprašanje-text").innerHTML = "Kolikšna je bila hitrost rakete Saturn V pri izstrelitvi?"
+					odgovor1 = "5,4 km/s"
+					odgovor2 = "7,1 km/s"
+					odgovor3 = "8,9 km/s"
+					odgovor4 = "11,7 km/s"
+					praviodgovor = 3
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+			if (num_vprašanja == 30) {
+				if (used.includes(30)) {
+					draw()
+				}
+				else {
+					ran += 1
+					used.push(30);
+					document.getElementById("vprašanje-text").innerHTML = "Kolikšen delež mase Sonca je vodik?"
+					odgovor1 = "90,6 %"
+					odgovor2 = "71,2 %"
+					odgovor3 = "64,9 %"
+					odgovor4 = "59,2 %"
+					praviodgovor = 2
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+			if (num_vprašanja == 31) {
+				if (used.includes(31)) {
+					draw()
+				}
+				else {
+					ran += 1
+					used.push(31);
+					document.getElementById("vprašanje-text").innerHTML = "Kolikšna je bila skupna dolžina postavitve teleskopa James Webb v vesolju?"
+					odgovor1 = "12,1 m"
+					odgovor2 = "11,0 m"
+					odgovor3 = "9,9 m"
+					odgovor4 = "13,5 m"
+					praviodgovor = 4
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+			if (num_vprašanja == 32) {
+				if (used.includes(32)) {
+					draw()
+				}
+				else {
+					ran += 1
+					used.push(32);
+					document.getElementById("vprašanje-text").innerHTML = "Kolikšna je povprečna gostota Jupitra?"
+					odgovor1 = "1,98 g/cm³"
+					odgovor2 = "1,09 g/cm³"
+					odgovor3 = "1,33 g/cm³"
+					odgovor4 = "1,58 g/cm³"
+					praviodgovor = 3
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+			if (num_vprašanja == 33) {
+				if (used.includes(33)) {
+					draw()
+				}
+				else {
+					ran += 1
+					used.push(33);
+					document.getElementById("vprašanje-text").innerHTML = "Koliko odstotkov mase Osončja predstavlja Sonce?"
+					odgovor1 = "99,03 %"
+					odgovor2 = "99,79 %"
+					odgovor3 = "99,86 %"
+					odgovor4 = "99,23 %"
+					praviodgovor = 3
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+			if (num_vprašanja == 34) {
+				if (used.includes(34)) {
+					draw()
+				}
+				else {
+					ran += 1
+					used.push(34);
+					document.getElementById("vprašanje-text").innerHTML = "Koliko časa svetloba potrebuje, da pride s Sonca na Zemljo?"
+					odgovor1 = "8 min 30 s"
+					odgovor2 = "8 min 20 s"
+					odgovor3 = "8 min 40 s"
+					odgovor4 = "8 min 50 s"
+					praviodgovor = 2
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+			if (num_vprašanja == 35) {
+				if (used.includes(35)) {
+					draw()
+				}
+				else {
+					ran += 1
+					used.push(35);
+					document.getElementById("vprašanje-text").innerHTML = "Kolikšna je bila najdaljša neprekinjena misija v vesolju?"
+					odgovor1 = "582 dni"
+					odgovor2 = "353 dni"
+					odgovor3 = "296 dni"
+					odgovor4 = "437 dni"
+					praviodgovor = 4
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+			if (num_vprašanja == 36) {
+				if (used.includes(36)) {
+					draw()
+				}
+				else {
+					ran += 1
+					used.push(36);
+					document.getElementById("vprašanje-text").innerHTML = "Kolikšna je povprečna hitrost Mednarodne vesoljske postaje glede na Zemljo?"
+					odgovor1 = "27 600 km/h"
+					odgovor2 = "37 200 km/h"
+					odgovor3 = "11 900 km/h"
+					odgovor4 = "8 500 km/h"
+					praviodgovor = 1
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+			if (num_vprašanja == 37) {
+				if (used.includes(37)) {
+					draw()
+				}
+				else {
+					ran += 1
+					used.push(37);
+					document.getElementById("vprašanje-text").innerHTML = "Kolikšna je bila skupna masa teleskopa Hubble ob izstrelitvi?"
+					odgovor1 = "18 820 kg"
+					odgovor2 = "13 200 kg"
+					odgovor3 = "11 110 kg"
+					odgovor4 = "24 890 kg"
+					praviodgovor = 3
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+			if (num_vprašanja == 38) {
+				if (used.includes(38)) {
+					draw()
+				}
+				else {
+					ran += 1
+					used.push(38);
+					document.getElementById("vprašanje-text").innerHTML = "Kolikšna je orbitalna hitrost Merkurja?"
+					odgovor1 = "41,8 km/s"
+					odgovor2 = "38,2 km/s"
+					odgovor3 = "26,9 km/s"
+					odgovor4 = "47,4 km/s"
+					praviodgovor = 4
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+			if (num_vprašanja == 39) {
+				if (used.includes(39)) {
+					draw()
+				}
+				else {
+					ran += 1
+					used.push(39);
+					document.getElementById("vprašanje-text").innerHTML = "Kolikšna je največja višina, ki jo je dosegla raketa Saturn V?"
+					odgovor1 = "291 000 km"
+					odgovor2 = "384 000 km"
+					odgovor3 = "190 000 km"
+					odgovor4 = "440 000 km"
+					praviodgovor = 2
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+			if (num_vprašanja == 40) {
+				if (used.includes(40)) {
+					draw()
+				}
+				else {
+					ran += 1
+					used.push(40);
+					document.getElementById("vprašanje-text").innerHTML = "Kolikšna je največja hitrost, ki jo je doseglo človeško vozilo?"
+					odgovor1 = "46 532 km/h"
+					odgovor2 = "31 897 km/h"
+					odgovor3 = "38 400 km/h"
+					odgovor4 = "29 890 km/h"
+					praviodgovor = 2
+					document.getElementById("rdeči_odgovor").innerText = odgovor1
+					document.getElementById("modri_odgovor").innerText = odgovor2
+					document.getElementById("rumeni_odgovor").innerText = odgovor3
+					document.getElementById("zeleni_odgovor").innerText = odgovor4
+				}
+			}
+
+
+		}
+		else {
+			finish()
+		}
+		
+		
+		window.onload = function() {
+      		draw();
+    	}
+
+	}
+	const playlist = [
+  { src: 'content/Jumper.mp3', volume: 0.4 },
+  { src: 'content/Are you smart.mp3', volume: 1.0 },
+  { src: 'content/HexagonForce.mp3', volume: 0.5 },
+	];
+
+	let currentTrack = Math.floor(Math.random() * playlist.length);
+	const audio = new Audio();
+
+	function startMusic() {
+	  audio.src = playlist[currentTrack].src;
+	  audio.volume = playlist[currentTrack].volume;
+	  audio.play();
+	  
+	  window.removeEventListener('mousedown', startMusic);
+	}
+
+	window.addEventListener('mousedown', startMusic);
+
+	audio.addEventListener('ended', () => {
+	  let nextTrack;
+	  do {
+	    nextTrack = Math.floor(Math.random() * playlist.length);
+	  } while (nextTrack === currentTrack);
+
+	  currentTrack = nextTrack;
+	  audio.src = playlist[currentTrack].src;
+	  audio.volume = playlist[currentTrack].volume;
+	  audio.play();
+});
+
+
+</script>
+</html>

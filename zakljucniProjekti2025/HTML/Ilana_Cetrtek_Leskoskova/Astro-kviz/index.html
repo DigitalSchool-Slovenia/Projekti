@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Astro-Kviz</title>
+  <link rel="icon" href="content/head-icon.ico" type="image/x-icon" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jersey+10&family=Monsieur+La+Doulaise&family=Rampart+One&family=Tangerine:wght@400;700&display=swap');
+
+    body {
+      background-image: none;
+      background-color: black;
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 10vh 2vw;
+      font-family: "Jersey 10", sans-serif;
+      color: white;
+      text-align: center;          
+      background-repeat: no-repeat; 
+    }
+    #uvodniText {
+      font-size: 2.5vw;
+      opacity: 0;
+      transition: opacity 1s ease;
+      pointer-events: none;
+      user-select: none;
+      margin-top: 0vh;
+    }
+    #uvodniText.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #uvodniText.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    b {
+      color: red;
+      font-size: 4.5vw;
+      display: block;
+      margin-bottom: 0.3em;
+    }
+    #naslov, #main, #aboutus {
+      visibility: hidden;
+    }
+    .main {
+      animation: GorDol 4s infinite ease-in-out;
+      position: relative;
+      margin-top: 10vh;
+      display: flex;
+      justify-content: center;
+      color: white;
+      padding: 1vw 3vh;
+      text-align: center;
+      text-decoration: none;
+      height: 12vh;
+      width: 10vw;
+      font-size: 3vw;
+      background-color: green;
+      margin-left: 44vw;
+      border-color: white;
+      border-radius: 1.25vw;
+      font-family: "Jersey 10";
+      border: none;
+      cursor: pointer;
+    }
+    .main:hover {
+      transform: scale(1.2);
+      transition: transform 0.2s ease;
+    }
+    .aboutus {
+      position: absolute;
+      top: 90vh;
+      margin-left: 40vw;
+      height: 4vh;
+      width: 3vw;
+      font-size: 1vw;
+      font-family: "Jersey 10";
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+    .aboutus:hover {
+      transform: scale(1.2);
+      transition: transform 0.2s ease;
+    }
+    #naslov {
+    	margin-top: -8vh;
+      color: red;
+      font-size: 5vw;
+      font-family: "Jersey 10";
+      text-align: center;
+    }
+    #credits {
+			visibility:hidden;
+			position: absolute;
+			z-index: 2;
+			top: 0vh;
+			left: 28vw;
+			font-family: sans-serif;
+		}
+		#backbutton:hover{
+			transform: scale(1.09);
+			transition: transform 0.5s ease;
+		}
+		h2{
+			color: #15f505;
+		}
+    @keyframes GorDol {
+      0%   { top: 0vh; }
+      50%  { top: -1.4vh; }
+      100% { top: 0vh; }   
+    }
+  </style>
+</head>
+<body>
+  <h1 id="naslov">ASTRO-KVIZ</h1>
+
+  <p id="uvodniText">
+    <b>NOTE:</b>TA IGRA VSEBUJE GLASBO IN SLIKE KI<br />
+    SO SUBJEKT AVTORSKIH PRAVIC.<br />
+    STRAN NI NAMENJENA NIČEMUR DRUGEM<br />
+    KOT BITI ZAKLJUČNI PROJEKT TEČAJA<br />
+    DIGITALSCHOOL SLOVENIJA - HTML BASIC.
+  </p>
+
+  <button id="main" class="main">
+    <a href="vprašanja.html" style="color: white; text-decoration: none;">Start</a>
+  </button>
+  <button id="aboutus" class="aboutus" onclick="creditsShow()">
+  	Credits
+  </button>
+  <div id = "credits">
+		<h1 style="color: #098ee0;">Made by <i>Klobuk Gang!</i> </h1>
+		<img src="content/arrow_left.png" style="width: 10vw; height: 14vh; float: left; margin-top: -4.6vh; margin-left: -48vw; position: absolute; cursor: pointer;" id="backbutton" onclick="creditsHide()"></img>
+		<br>
+		<h1>Kaj smo naredili</h1>
+		<h2>Saša Saraginova: Zadnja stran (TaRečKjerTiPoveTočkeInDaNazajNaPrvoStran)</h2>
+		<h2>Andrej Donin: Začetna stran z gumbom start</h2>
+		<h2>Žiga Gorjup: Stran z vprašanji </h2>
+		<h2>Aleksander Oven Stanič: Credits</h2>
+		<h1>NAJBOLJŠI PROJEKTI</h1>	
+		<h2><a href = "content/najboljši projekti/piceeeeee.html" target="_blank">-Profesionalna dostava pic</a> (žiga)</h2>
+			<h2><a href="content/najboljši projekti/elo.html" target="_blank">-ELO</a> (aleksander)</h2>
+			<h2><a href="content/najboljši projekti/Shop.html" target="_blank">-shop figur</a> (saša)</h2>
+			<h2><a href="content/najboljši projekti/zivali 2.html" target="_blank">-Živali 2</a> (andrej(opomba: joke))</h2>
+			<h2></h2>
+	</div>
+  <audio id="backgroundMusic" src="content/Menumusic.mp3" preload="auto"></audio>
+
+  <script>
+  window.onload = function () {
+    const uvod = document.getElementById("uvodniText");
+    const naslov = document.getElementById("naslov");
+    const main = document.getElementById("main");
+    const aboutus = document.getElementById("aboutus");
+    const audio = document.getElementById("backgroundMusic");
+
+    setTimeout(() => {
+      uvod.classList.add("visible");
+    }, 200);
+
+    function handleClick() {
+      uvod.classList.remove("visible");
+      uvod.classList.add("hidden");
+
+      setTimeout(() => {
+        naslov.style.visibility = "visible";
+        main.style.visibility = "visible";
+        aboutus.style.visibility = "visible";
+        document.body.style.backgroundImage = "url('content/galaksija.jpg')";
+      }, 1000);
+
+      setTimeout(() => {
+        audio.loop = true;
+        audio.play().catch((e) => {
+          console.log("Napaka pri predvajanju:", e);
+        });
+      }, 1000);
+    }
+
+    document.addEventListener("click", handleClick, { once: true });
+  };
+  function creditsShow() {
+  	document.getElementById("naslov").style.visibility = "hidden";
+  	document.getElementById("main").style.visibility = "hidden";
+  	document.getElementById("aboutus").style.visibility = "hidden";
+  	document.getElementById("credits").style.visibility = "visible";
+  	document.body.style.backgroundImage = "url('content/purple_wallpaper.png')";
+  }
+   function creditsHide() {
+  	document.getElementById("naslov").style.visibility = "visible";
+  	document.getElementById("main").style.visibility = "visible";
+  	document.getElementById("aboutus").style.visibility = "visible";
+  	document.getElementById("credits").style.visibility = "hidden";
+  	document.body.style.backgroundImage = "url('content/galaksija.jpg')";
+  }
+</script>
+</body>
+</html>
