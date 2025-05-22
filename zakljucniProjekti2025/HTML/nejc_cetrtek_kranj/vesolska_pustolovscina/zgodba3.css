@@ -1,0 +1,52 @@
+
+
+
+
+
+        body{
+            background-color: cyan;
+        }
+        p{
+            background-color: greenyellow;
+            
+        }
+        .stori3{
+            text-align:center;
+            padding: 50PX;
+            border-radius: 25px;
+            background-color: greenyellow;
+        }
+        .vesoljskapustolovščina3{
+            text-align: center ;
+        }
+        td{
+            background-color: white;
+            width: 800px;
+            height: 400px;
+            text-align: center;
+            font-size: xx-large;
+            
+            
+        }
+
+        table{
+            margin: 0 auto;
+        }
+
+        button {
+            background: lightblue;
+            outline: none;
+            border: 5px solid gray;
+            font-size: 35px;
+            margin: 0 220px;
+            padding: 10px 30px;
+            /* box-shadow: 5px 5px 45px 10px cyan; */
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.795);
+            transition: 0.2s;
+        }
+
+        button:hover{
+            scale: 1.1;
+            box-shadow: 7px 7px 5px 10px rgba(0, 0, 0, 0.795);
+        }
+        

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL 1</title>
+
+    <style>
+
+        body{
+            background-image: url("index_images/5be40dd9479e3b6fe677a89bccff2aaa.jpeg");
+            background-size: 100%;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1{
+            color: white;
+        }
+
+        
+
+    </style>
+
+</head>
+<body>
+    
+    <h1>Vesolec si je izmislil število probaj ga uganiti</h1>
+
+    <div>
+        <input type="number" name="" id="vnos_uporabnika"> 
+        <button onclick="klik()">Preveri</button>
+    </div>
+
+    <p id="output">Pritisni gumb da preveriš</p>
+
+
+
+
+    <script>
+        const stevilo = Math.floor(Math.random()*100)
+        console.log(stevilo)
+
+        const vnosField = document.getElementById("vnos_uporabnika")
+        const output = document.getElementById("output")
+
+        function klik() {
+            const poskus = +vnosField.value
+
+            if (stevilo == poskus) {
+                output.textContent = "Pravilno"
+            }
+            else if (stevilo > poskus){
+                output.textContent = "Prenizko"
+            }
+            else {
+                output.textContent = "Previsoko"
+            }
+            
+        }
+    </script>
+</body>
+</html> 

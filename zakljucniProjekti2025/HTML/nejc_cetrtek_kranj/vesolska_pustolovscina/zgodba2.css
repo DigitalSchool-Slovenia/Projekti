@@ -1,0 +1,86 @@
+h1{
+    padding: 50px;
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+body{
+background-color: chartreuse;
+padding: 50px;
+margin: 0;
+
+}
+img {
+width: 800pxpx;
+display: block;
+height: 400px;
+}  
+div{
+    text-align: center;
+    padding: 20px;
+    background-color: chartreuse;
+}
+#vrh{
+    display: flex;
+     justify-content: space-evenly; 
+}
+body{
+    text-align: center;
+    background-color: cyan;
+    display: flex;
+    flex-direction: column;
+}
+td{
+    border: 1px solid chocolate;
+    background-color: white;
+    width: 800px;
+    height: 400px;
+    font-size: xx-large;
+}
+button{
+    background-color: lime;
+    padding: 10px;
+    box-shadow: 5px 5px 5px 5px black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

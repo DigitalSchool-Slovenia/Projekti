@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+
+   <style>
+      td {
+         border: 1px solid white;
+         width: 150px;
+         height: 150px;
+         color: wheat;
+      }
+
+      body {
+         padding: 15px;
+         background-color: black;
+         color: green;
+         font-size: 12rem;
+         text-align: center;
+      }
+
+      div {
+         padding: 20px;
+         color: white;
+         font-size: 30px;
+      }
+   </style>
+</head>
+
+<body>
+
+   <div>Navodila: Klikni polja kjer so se pojavili astronomski liki.</div>
+   <div>Lives: <span id="lives-count">2</span></div>
+
+   <table>
+
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+
+
+
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+
+
+
+
+
+
+
+
+
+
+
+   </table>
+
+   <script>
+
+      let lives = 2;
+
+      const izbrane_celice = [...Array(25).keys()].sort(() => 0.5 - Math.random()).slice(0, 5)
+
+      let vse_celice = [...document.querySelectorAll("td")].filter((_, idx) => izbrane_celice.includes(idx))
+
+      console.log(vse_celice)
+
+      const slike = [
+         "url('./lvl3_images/galaksija.png')",
+         "url('./lvl3_images/mars.png')",
+         "url('./lvl3_images/neptun.png')",
+         "url('./lvl3_images/saturn.png')",
+         "url('./lvl3_images/sonce.png')"
+      ]
+
+      vse_celice.forEach((celica, idx) => {
+         celica.style.background = slike[idx]
+         celica.style.backgroundSize = "cover"
+         celica.style.backgroundPosition = "center"
+      })
+
+      setTimeout(() => {
+         vse_celice.forEach(celica => celica.style.background = null)
+      }, 510);
+
+      const cisto_vse_celice = [...document.querySelectorAll("td")]
+      
+      let foundImages = 0;
+
+
+      cisto_vse_celice.forEach(celica => {
+         celica.addEventListener("click", () => {
+            if (vse_celice.includes(celica)){
+               vse_celice = vse_celice.filter(c => c != celica)
+               console.log(vse_celice)
+               celica.style.background = "#00FF00"
+               foundImages++
+               if(foundImages == 5){
+                  window.location.assign("you_win.html"); 
+               }
+            }
+            else if (celica.style.background == "rgb(0, 255, 0)") {
+               console.log("what")
+            }
+            else {
+               celica.style.background = "rgb(255, 0, 0)"
+               lives--
+               document.getElementById("lives-count").innerText = lives
+               if (lives <= 0){
+                  window.location.assign("you_lose.html"); 
+               }
+            }
+
+            console.log(celica.style.background === "rgb(255, 0, 0)")
+            
+            console.log(foundImages)
+         })
+      })
+   </script>
+
+</body>
+
+
+
+</html>

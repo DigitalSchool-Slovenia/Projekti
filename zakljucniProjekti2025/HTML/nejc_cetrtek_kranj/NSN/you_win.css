@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    background-color: black;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+p{
+    color: green;
+    font-size: 8rem;
+    text-align: center;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Slasher(Play)</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+    <div id="meni">
+        <p><a href="./index.html">home</a></p>
+        <p><a href="./setings.html">settings</a></p>
+        <p><a href="./tutorial.html">tutorial</a></p>
+        <p>score: <span id="score">0</span></p>
+    </div>
+   <table>
+    <tr>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+    </tr>
+    <tr>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+    </tr>
+    <tr>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+    </tr>
+    <tr>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+
+
+
+
+
+
+
+
+
+
+    </tr>
+
+   </table>
+
+
+
+   <script>
+
+    const vse_celice = document.querySelectorAll(".cell")
+
+    const score_span = document.querySelector("#score")
+
+    const sadje = [
+        "./game_images/apple.png",
+        "./game_images/Avokado-1-removebg-preview.png",
+        "./game_images/Banana-removebg-preview.png",
+        "./game_images/grape-removebg-preview.png",
+        "./game_images/Mango-removebg-preview.png",
+        "./game_images/Nectarine-removebg-preview.png",
+        "./game_images/Strawberry-removebg-preview.png",
+    ]
+    
+    function narediSadez(){
+        const izbrana_celica = vse_celice[Math.floor(Math.random()*16)]
+    
+        let sadez = sadje[Math.floor(Math.random()*6)]
+        izbrana_celica.style.background = "url(" + sadez + ")"
+        izbrana_celica.style.backgroundSize = "contain"
+        izbrana_celica.style.backgroundRepeat = "no-repeat"
+        izbrana_celica.style.backgroundPosition = "center"
+    
+        setTimeout(() => {
+            izbrana_celica.style.background = null
+        }, 3000);
+    }
+
+    setInterval(() => {
+        narediSadez()
+        narediSadez()
+        narediSadez()
+        narediSadez()
+        narediSadez()
+        narediSadez()
+        narediSadez()
+        narediSadez()
+
+    }, 4000);
+
+    vse_celice.forEach(celica => {
+        celica.addEventListener("click", () => {
+            if (Boolean(celica.style.background)) {
+                score_span.innerText = +score_span.innerText +  1
+            }
+
+
+            celica.style.background = null
+        })
+    })
+    
+   </script>
+</body>
+</html>
