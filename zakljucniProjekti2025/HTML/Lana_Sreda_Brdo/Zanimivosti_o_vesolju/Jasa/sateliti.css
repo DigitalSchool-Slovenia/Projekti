@@ -1,0 +1,51 @@
+body{
+	background-color: lightblue;
+}
+img{
+	height: 300px;
+	width: 500px;
+}
+.grid{
+	display: grid;
+	grid-template-areas: 
+	  "nav nav"
+	  "naslov naslov"
+	  "kaj-so slika"
+	  "kako slika"
+	  "vrste slika2"
+	  "zanimivosti slika2";
+	  grid-template-colums:1fr 1fr;
+
+}
+
+.nav{
+	grid-area: nav;
+	margin: auto;
+
+}
+.kaj-so{
+	grid-area: kaj-so;
+}
+.naslov{
+	grid-area: naslov;
+	margin: auto;
+	font-size: 100px;
+}
+.kako-delujejo{
+	grid-area: kako;
+}
+.slika2{
+	grid-area: slika2;
+}
+.vrste{
+	grid-area: vrste;
+}
+.zanimivosti{
+	grid-area: zanimivosti;
+}
+.slika{
+	grid-area: slika;
+}
+h1 {
+  color: red;
+}

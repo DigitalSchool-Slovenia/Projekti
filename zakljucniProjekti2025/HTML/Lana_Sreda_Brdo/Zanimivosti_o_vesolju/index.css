@@ -1,0 +1,52 @@
+body{
+	background-image: url("Ian/666666.jpg");
+	color: white;
+	text-align: center;
+}
+
+.grid{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
+}
+
+.planet9{
+	background-image: url("Ian/6.jpg");
+	background-size: cover;
+	height: 200px;
+	width: 200px;
+	margin: auto;
+}
+
+.supernova{
+	background-image: url("Ian/supernova.jpg");
+	background-size: cover;
+	height: 200px;
+	width: 200px;
+	margin: auto;
+}
+
+.sateliti{
+	background-image: url("Ian/sateliti.jpg");
+	background-size: cover;
+	height: 200px;
+	width: 200px;
+	margin: auto;
+}
+
+.crnalukna{
+	background-image: url("Ian/blackhole.jpg");
+	background-size: cover;
+	height: 200px;
+	width: 200px;
+	margin: auto;
+}
+
+.kometi{
+	background-image: url("Ian/komet.jpg");
+	background-size: cover;
+	height: 200px;
+	width: 200px;
+	margin: auto;
+}
+

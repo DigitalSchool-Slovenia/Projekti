@@ -1,0 +1,26 @@
+.grid{
+	display:grid;
+	grid-template-areas:
+	"nav nav"
+	"naslov naslov"
+	"zacetek zacetek"
+	"ime ime"
+	"modraslika modraslika"
+	"iskanja iskanja"
+	"padec padec"
+	"crnaslika crnaslika"
+	"vrste vrste";
+	grid-template-columns: 1fr 1fr;
+
+}
+
+.nav{
+	grid-area: nav;
+}
+
+body{
+	background-image: url(ozadje.jpg);
+	background-size: 200vh;
+	color: white;
+
+}

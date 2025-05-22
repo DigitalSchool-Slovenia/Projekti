@@ -1,0 +1,78 @@
+.slika img {
+	width: 390px;
+	height: 290px;
+	border-radius:20px;
+	border: double;
+}
+.slika{
+	margin-block:center;
+}
+
+.slika2 img{
+	width: 390px;
+	height: 290px;
+	border-radius:20px;
+	border: double;                   
+}
+
+
+
+body{
+	background-color:lightblue;
+	font-family: Helvetica;
+	font-size: 20px;
+}
+
+.Tipi{
+	border: double;
+	border-radius:20px;
+	border: double;
+}
+
+.Kandidati{
+	border: double;
+	border-radius:20px;
+	border: double;
+}
+.grid {
+	display: grid;
+	grid-template-areas: 
+	"nav nav"
+	"kako slika"
+	"tipi tipi"
+	"kandidati slika2";
+	grid-template-columns:1fr 1fr;
+}
+
+.nav{
+	grid-area: nav;
+	margin: auto;
+	border-radius:20px;
+	border: darkblue;
+	border: double;
+}
+
+.kako{
+	grid-area: kako;
+	border-radius:20px;
+	border: double;
+}
+
+.slika{
+	grid-area: slika;
+	margin: auto;
+}
+
+.Tipi{
+	grid-area: tipi;
+
+}
+
+.Kandidati{
+	grid-area: kandidati;
+}
+
+.slika2{
+	grid-area: slika2;
+	margin: auto;
+}
