@@ -1,0 +1,17 @@
+body{
+	background-image: url("hacked.jpg");
+	color: white;
+}
+.grid{
+	display: grid;
+	grid-template-areas:
+	"img "
+	 "nav nav";
+	 grid-auto-columns: 3fr 2fr;
+
+
+}
+
+h2{
+	color: orangered;
+}

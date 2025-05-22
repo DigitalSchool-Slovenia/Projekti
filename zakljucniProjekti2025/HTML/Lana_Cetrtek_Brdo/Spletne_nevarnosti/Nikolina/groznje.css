@@ -1,0 +1,57 @@
+.grid{
+	display: grid;
+	grid-template-areas:
+	"nav nav" 
+    "naslov naslov"
+    "uvod uvod"
+    "vrste slika1"
+    "primeri primeri"
+    "ukrepanje slika2";
+    grid-template-columns: 1fr 1fr;
+}
+
+
+img{
+	width: 400px;
+}
+.nav{
+	grid-area: nav;
+}
+
+.naslov{
+	grid-area: naslov;
+}
+
+.uvod{
+	grid-area: uvod;
+}
+
+.vrste{
+	grid-area: vrste;
+}
+
+.slika1{
+	grid-area: slika1;
+}
+
+.primeri{
+	grid-area: primeri;
+}
+
+.ukrepanje{
+	grid-area: ukrepanje;
+}
+
+.slika2{
+	grid-area: slika2;
+}
+
+body{
+	background-image: url("ozadje.jpg");
+	color: white;
+	background-size: 250vh;
+}
+
+a{
+	color: turquoise;
+}
