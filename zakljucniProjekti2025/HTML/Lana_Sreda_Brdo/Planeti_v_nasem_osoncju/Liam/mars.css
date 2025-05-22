@@ -1,0 +1,58 @@
+.grid{
+	display: grid;
+	grid-template-areas: 
+	"nav nav"
+	"slika slika"
+	"opis zanimivosti";
+	grid-template-columns: 1fr 1fr;
+}
+
+img{
+	border-radius: 75px;
+	width: 400px;
+	height: 400px;
+}
+
+.slika{
+	grid-area: slika;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	background-color: gray;
+	border-radius: 25px;
+	font-size: 25px;
+}
+
+.opis{
+	grid-area: opis;
+	background-color: #f39c12;
+	border-radius: 25px;
+	font-size: 20px;
+}
+
+.zanimivosti{
+	grid-area: zanimivosti;
+	background-color: #f39c12;
+	border-radius: 25px;
+	font-size: 20px;
+}
+
+.nav{
+	grid-area: nav;
+	display: flex;
+	justify-content: center;
+	background-color: #D3D3D3;
+	border-radius: 25px;
+	font-size: 20px;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	text-decoration: none;
+}

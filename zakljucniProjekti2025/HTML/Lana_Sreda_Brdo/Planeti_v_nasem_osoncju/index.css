@@ -1,0 +1,116 @@
+.grid{
+	display:grid;
+	grid: flex;
+	grid-template-areas:
+	"nav nav"
+	"uvod uvod"
+	"Merkur Merkur"
+	"Venera Venera"
+	"Zemlja Zemlja"
+	"Mars Mars"
+	"Jupiter Jupiter"
+	"Saturn Saturn"
+	"Uran Uran"
+	"Neptun Neptun";
+	grid-template-columns:2fr 1fr;
+}
+
+body{
+	background-image:url(Lili/v.jpg);
+}
+
+.nav{
+	grid-area:nav;
+	background-color:#483D8B;
+	margin-bottom:15px;
+	border-radius:10px;
+	grid-area:nav;
+	justify-items: center;
+}
+.uvod{
+	grid-area:uvod;
+	background-color:ghostwhite;
+	margin-bottom:20px;
+	border-radius:10px;
+}
+.Mars{
+	grid-area:Mars;
+	background-color:ghostwhite;
+	margin-bottom:20px;
+	border-radius:10px;
+	height:170px;
+}
+.Venera{
+	grid-area:Venera;
+	background-color:ghostwhite;
+	margin-bottom:20px;
+	border-radius:10px;
+	height:170px;
+	
+}
+.Zemlja{
+	grid-area:Zemlja;
+	background-color:ghostwhite;
+	margin-bottom:20px;
+	height:170px;
+	border-radius:10px;
+}
+.Merkur{
+	grid-area:Merkur;
+	background-color:ghostwhite;
+	margin-bottom:20px;
+	border-radius:10px;
+	height:170px;
+}
+.Jupiter{
+	grid-area:Jupiter;
+	background-color:ghostwhite;
+	margin-bottom:20px;
+	border-radius:10px;
+	height:170px;
+}
+.Saturn{
+	grid-area:Saturn;
+	background-color:ghostwhite;
+	margin-bottom:20px;
+	border-radius:10px;
+	height:170px;
+}
+.Uran{
+	grid-area:Uran;
+	background-color:ghostwhite;
+	margin-bottom:20px;
+	border-radius:10px;
+	height:170px;
+}
+.Neptun{
+	grid-area:Neptun;
+	background-color:ghostwhite;
+	margin-bottom:20px;
+	border-radius:10px;
+	height:170px;
+}
+
+img{
+	height:auto;
+	width:100px;
+	margin-bottom:60px;
+	border-radius:30px;
+	margin-left:940px;
+	padding:10px;
+
+}
+
+.nav a{
+	color:ghostwhite;
+	text-decoration:none;
+}
+
+.besedilo a{
+	color: #5F9EA0;
+	text-decoration:none;
+}
+
+
+
+
