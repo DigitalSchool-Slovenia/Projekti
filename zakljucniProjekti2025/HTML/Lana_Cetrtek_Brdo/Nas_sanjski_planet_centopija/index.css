@@ -1,0 +1,53 @@
+.navigacija{
+	display: flex;
+	justify-content: center;
+	background-color: skyblue;
+	height: 30px;
+	padding: 17px;
+    font-size: 20px;
+    grid-area: nav;
+
+}
+a{
+	color:black ;
+	text-decoration: none;
+
+}
+.naslov{
+	display: flex;
+	justify-content: center;
+	
+}
+.text{
+	display: flex;
+	justify-content: center;
+	grid-area: text;
+	width: 800px;
+	margin: auto;
+}
+
+img{
+width: 500px;
+height: auto;
+}	
+
+.slika{
+	display: flex;
+	justify-content: center;
+	grid-area: slika;
+}
+
+.grid{
+	display: grid;
+	grid-template-areas:
+	"nav nav"
+	"naslov naslov"
+	"text text"
+	"slika slika";
+	grid-template-columns: 1fr 1fr;
+}
+
+.naslov{
+	grid-area: naslov;
+}
+

@@ -1,0 +1,147 @@
+img{
+	height: auto;
+	width: 300px;
+	border-radius: 15px;
+	border-style: dotted;
+}
+
+.naslov1{
+	display: flex;
+	justify-content: center;
+	background-color: lightskyblue;
+}
+
+.nav{
+	display: flex;
+	justify-content: center;
+}
+
+.grid{
+
+	display: grid;
+	grid-template-areas:
+	"nav nav"
+	"naslov1 naslov1"
+	"besedilo1 besedilo1"
+	"slika1 besedilo2"
+	"besedilo3 besedilo3" 
+	"besedilo4 besedilo4" 
+	"slika2 slika2" 
+	"besedilo5 besedilo5" 
+	"besedilo6 besedilo6" 
+	"besedilo7 besedilo7" 
+	"besedilo8 besedilo8" 
+	"besedilo9 besedilo9"
+	"besedilo10 besedilo10" 
+	"besedilo11 besedilo11" ;
+
+	grid-template-columns:1fr 1fr ;
+
+
+
+}
+
+.naslov1{
+
+	grid-area: naslov1;
+	text-decoration: ;
+}
+
+.besedilo1{
+
+	grid-area: besedilo1;
+	text-decoration: ;
+}
+
+.slika1{
+
+	grid-area: slika1;
+	text-decoration: ;
+	margin-left: 50px;
+}
+
+.besedilo2{
+
+	grid-area: besedilo2;
+	text-decoration: ;
+	margin-right: 50px;
+}
+
+.nav{
+
+	grid-area: nav;
+	text-decoration: ;
+}
+
+.besedilo4{
+
+	grid-area: besedilo4;
+	text-decoration: ;
+}
+
+.slika2{
+
+	grid-area: slika2;
+	text-decoration: ;
+	margin-left: 50px;
+}
+
+.besedilo5{
+
+	grid-area: besedilo5;
+	text-decoration: ;
+}
+
+.besedilo6{
+
+	grid-area: besedilo6;
+	text-decoration: ;
+}
+
+.besedilo7{
+
+	grid-area: besedilo7;
+	text-decoration: ;
+	color: blue;
+}
+
+.besedilo8{
+
+	grid-area: besedilo8;
+	text-decoration: ;
+}
+
+.besedilo9{
+
+	grid-area: besedilo9;
+	color: blue;
+	height: auto;
+	width: 300px;
+
+}
+
+
+.besedilo10{
+
+	grid-area: besedilo10;
+	text-decoration: ;
+}
+
+.besedilo11{
+
+	grid-area: besedilo11;
+	text-decoration: ;
+}
+
+.besedilo12{
+
+	grid-area: besedilo12;
+	text-decoration: ;
+}
+
+.besedilo13{
+
+	grid-area: besedilo13;
+	text-decoration: ;
+}
+

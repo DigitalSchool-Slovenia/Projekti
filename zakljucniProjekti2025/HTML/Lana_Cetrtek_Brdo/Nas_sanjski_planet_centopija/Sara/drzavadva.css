@@ -1,0 +1,31 @@
+img {
+   width:300px ;
+   height: auto;
+   border-left-style: dotted;
+}
+
+.nav{
+   display: flex;
+   justify-content: center;
+}
+
+.naslov1{
+   display: flex;
+   flex-direction: column;
+   justify-items: center;
+   align-items: center;
+}
+
+
+.naslov1{
+  
+  grid-area: naslov1;
+}
+
+
+ .naslov2{
+   display: flex;
+   flex-direction: column;
+   justify-items: center;
+   align-items: center;
+ }
