@@ -1,0 +1,44 @@
+.spacing li {
+    margin-left: 50px;
+    }
+.spacing1{
+  margin-left: 300px;
+}
+
+.space {
+  margin-left: 50px;
+}
+#img-virusi{
+  border-radius: 12px;
+}
+.paragraph-image {
+  display: flex;
+  width: 100%;
+}
+.paragraph-image .paragraph {
+  width: 60%;
+}
+.paragraph-image .image {
+  margin: 0 10px;
+}
+.paragraph-image img {
+  height: 150px;
+}
+#img-nasvet {
+  max-width: 50%;
+}
+.images-identity {
+  display: flex;
+  
+}
+.col-4 {
+  height: 150px;
+  margin: 10px
+}
+
+.video1 {
+  display: block;
+  margin-left: 20px;
+  margin-top: 20px;
+  border-radius: 12px;
+}

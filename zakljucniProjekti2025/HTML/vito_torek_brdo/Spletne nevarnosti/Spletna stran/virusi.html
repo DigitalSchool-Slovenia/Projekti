@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Virusi</title>
+</head>
+<body>
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spletne Nevarnosti</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/navbar-style.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Hamburger Toggle (Mobile) -->
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div id="title-navbar" class="fa-shield-exclamation logo">SPLETNE NEVARNOSTI</div>
+    <nav>
+      <ul>
+        <li><a id="domov" href="index.html"><i class="fa-solid fa-home"></i></i>Domov</a></li>
+        <li><a id="virus" class="active" href="virusi.html"><i class="fa-solid fa-virus"></i></i>Virusi</a></li>
+        <li><a id="kraja" href="kraja-identitete.html"><i class=" fa fa-address-card"></i>Kraja Identitete</a></li>
+        <li><a id="podatki" href="kraja-podatkov.html"><i class=" fas fa-user-ninja"></i>Kraja podatkov</a></li>
+        <li><a id="izsiljevanje" href="izsiljevanje.html"><i class=" fa fa-user-secret"></i>Izsiljevanje</a></li>
+        <li><a id="nasilje" href="nasilje.html"><i class=" fa fa-hand-fist"></i>Spletno nasilje</a></li>
+        <li><a id="nasveti" href="nasveti.html"><i class="fa-solid fa-lightbulb"></i>Nasveti</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+
+    toggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
+	<!-- Main Content -->
+  <main class="content">
+    <h1>Virusi</h1><br><br>
+    <h3>Kaj so računalniški virusi in kako se zaščititi pred njimi?</h3>
+    <p>Računalniški virusi so ena izmed najbolj razširjenih oblik zlonamerne programske opreme, ki lahko poškoduje vaše naprave, ukrade vaše podatke ali povzroči druge oblike škode. Pomembno je, da razumete, kako virusi delujejo, kako jih preprečiti in kaj storiti, če ste že postali žrtev.</p>
+    <br>
+    
+    <div class="paragraph-image">
+      <div class="paragraph">
+        <h3>Kaj je računalniški virus?</h3>
+        <p>Računalniški virus je zlonamerna programska oprema, ki se samodejno širi in okuži druge datoteke ali naprave. Kot biološki virusi napadajo celice, računalniški virusi okužijo datoteke ali sisteme. Ko se virus prenese v računalnik ali drugo napravo, se običajno prikrije kot običajna datoteka, a sčasoma začne izvajati škodljive naloge.</p>
+      </div>
+      <div class="image">
+      <img id="img-virusi" src="https://i0.wp.com/www.ictworks.org/wp-content/uploads/2010/10/computer-virus.png?w=640&ssl=1" class="image">
+    </div>
+    <div class="image">
+    <img id="img-virusi" src="https://www.web5.com/wp-content/uploads/2022/09/15-768x385.png">
+    </div>
+    </div>
+    <br>
+    <h3>Kako se virusi širijo?</h3>
+
+    <p>Računalniški virusi se širijo na več načinov:
+Prenos prek e-pošte: Okuženi priponki v e-poštnih sporočilih so eden najpogostejših načinov za širjenje virusov.
+
+Prenos iz prenesenih datotek: Virus se lahko prenaša skupaj z drugimi datotekami, kot so programske aplikacije, dokumenti ali videoposnetki.
+
+Družbeni mediji in spletne strani: Klik na okuženo povezavo na družbenih omrežjih ali obiski nepreverjenih spletnih strani lahko privede do prenosa virusa na vašo napravo.
+
+Uporaba prenosnih naprav: Z uporabo USB ključkov ali zunanjih trdih diskov, ki so bili v stiku z okuženimi napravami, lahko nenamerno prenesete viruse.</p><br>
+	<h3>Vrste računalniških virusov</h3>
+	<p>Računalniški virusi so lahko različni, vendar vse vrste delujejo na podoben način: okužijo napravo, prepisujejo pomembne datoteke ali izvedejo škodljive naloge. Nekatere najpogostejše vrste virusov vključujejo:
+
+Datotečni virusi: Ti virusi okužijo obstoječe datoteke na računalniku in jih lahko poškodujejo ali spremenijo.
+
+Makro virusi: Makro virusi so običajno skriti v dokumentih, kot so Word ali Excel datoteke. Ko odprete okuženi dokument, virus aktivira škodljive kode.
+
+Trojanski konji: Trojanski konj je vrsta zlonamerne programske opreme, ki se pretvarja za zakonit program. Ko ga enkrat naložite, lahko omogoči napadalcem dostop do vašega sistema.
+
+Ransomware (virus za izsiljevanje): Ta virus zaklene vaše datoteke in zahteva plačilo odkupnine v zameno za odklepanje datotek.
+</p><br>
+<img style="height: 180px;" src="https://www.insecure.in/images/cover/computer-virus.webp">
+<h3>Kako prepoznati okužbo z virusom?
+</h3>
+<p>Obstajajo nekateri znaki, ki vam lahko povedo, da je vaš računalnik okužen z virusom:
+
+Računalnik postane nenavadno počasen ali se ustavi med delovanjem.
+
+Nenavadni izpadi ali ponovni zagon sistema.
+
+Programi in datoteke izginjajo ali se spreminjajo brez vašega dovoljenja.
+
+Spletni brskalnik prikazuje nenavadne oglase ali presmeritve na sumljive strani.
+
+Prejemate nenavadna ali neznana sporočila po e-pošti.</p><br> 
+<h3>Kako zaščititi računalnik pred virusi?</h3>
+<p>Zaščita pred virusi vključuje več preventivnih ukrepov, ki vam lahko pomagajo preprečiti okužbe:<br>
+<ol class="spacing"><br>
+   <li> Namestite protivirusno programsko opremo: Zanesljiv protivirusni program lahko zazna in odstrani mnoge vrste zlonamerne programske opreme, vključno z virusi.</li> 
+
+    <li>  Posodabljajte programsko opremo: Redno posodabljanje operacijskih sistemov, programov in aplikacij je ključno za zaščito pred novimi grožnjami.</li> 
+  <li>  Pazite pri prenosu datotek: Prenos datotek iz neznanih ali sumljivih virov povečuje tveganje za okužbo z virusom.</li> 
+   <li> Ne odpirajte sumljivih e-poštnih priponk: Nikoli ne odpirajte e-poštnih priponk od neznanih pošiljateljev ali sumljivih sporočil.</li> 
+
+   <li> Uporabljajte požarni zid (firewall): Požarni zid pomaga zaščititi vaš računalnik pred zlonamernimi napadi z zunanjih omrežij.</li> 
+
+<li>   Redno varnostno kopiranje podatkov: Redno ustvarjanje varnostnih kopij vaših podatkov omogoča, da se izognete izgubi podatkov v primeru okužbe z ransomware-om.</li> 
+</ol>
+   <br>
+<h3>Kaj storiti, če ste okuženi z virusom?</h3>
+<p>Če menite, da je vaš računalnik okužen z virusom, ukrepajte čim prej:
+
+Izklopite internetno povezavo: Tako preprečite nadaljnje širjenje virusa ali prenos dodatnih škodljivih datotek.
+
+Zaženite protivirusni program: Izvedite popoln pregled sistema z vašim protivirusnim programom, da odstranite viruse.
+
+Posodobite zaščitno programsko opremo: Poskrbite, da so vaši protivirusni programi posodobljeni, saj se novi virusi pogosto izognejo starejšim zaščitam.
+
+Obrnite se na strokovnjake: Če ne morete odstraniti virusa ali ste postali žrtev ransomware-a, se posvetujte s strokovnjakom za računalniško varnost.</p>
+
+    
+  </main>
+
+</body>
+</html>

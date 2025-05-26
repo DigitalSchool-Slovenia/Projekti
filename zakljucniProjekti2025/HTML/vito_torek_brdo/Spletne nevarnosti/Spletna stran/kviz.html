@@ -1,0 +1,298 @@
+ <!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Kviz: Varnost na internetu</title>
+<style>
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem;
+  }
+  .container {
+    background: #1e1f28dd;
+    max-width: 350px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 20px 25px 30px 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+  }
+  h1 {
+    text-align: center;
+    margin: 0 0 1rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #ffffffee;
+  }
+  .question {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    min-height: 70px;
+  }
+  .answers {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+  }
+  .answers li {
+    background: #33384c;
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 2px solid transparent;
+    user-select: none;
+  }
+  .answers li:hover {
+    background: #4351a3;
+  }
+  .answers li.selected {
+    border-color: #77dd77;
+    background: #335533;
+  }
+  button {
+    background: #2575fc;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #1a589e;
+    transition: background-color 0.3s ease;
+  }
+  button:disabled {
+    background: #999;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  button:hover:not(:disabled) {
+    background: #1a589e;
+  }
+  .result {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 700;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 1.2rem;
+    font-size: 0.9rem;
+    color: #bbb;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 400px) {
+    .container {
+      padding: 15px 20px 25px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container" role="main" aria-live="polite">
+    <h1>Kviz: Varnost na internetu</h1>
+    <div class="question" id="question" tabindex="0"></div>
+    <ul class="answers" id="answers"></ul>
+    <button id="submitBtn" disabled>Potrdi</button>
+    <div class="result" id="result"></div>
+    <div class="footer">© Varnost na internetu</div>
+  </div>
+
+<script>
+(() => {
+  const quizData = [
+    {
+      question: "Kaj je najboljša zaščita pred krajo gesla?",
+      answers: [
+        "Uporaba enostavnega gesla, ki si ga je lahko zapomniti",
+        "Uporaba močnega, unikatnega gesla za vsak račun",
+        "Uporaba svojega rojstnega datuma kot gesla",
+        "Deljenje gesla s prijatelji za večjo varnost"
+      ],
+      correct: 1
+    },
+    {
+      question: "Kaj pomeni dvofaktorska avtentikacija (2FA)?",
+      answers: [
+        "Uporaba dveh različnih gesel hkrati",
+        "Preverjanje identitete z dvema neodvisnima načinoma",
+        "Shranjevanje gesel v oblaku",
+        "Uporaba enega gesla za dve aplikaciji"
+      ],
+      correct: 1
+    },
+    {
+      question: "Kaj morate narediti, če prejmete sumljivo e-pošto z prilogo?",
+      answers: [
+        "Odpreti prilogo, da preverite, kaj je noter",
+        "Ignorirati in takoj izbrisati e-pošto",
+        "Poslati prilogo prijatelju, da vpraša za mnenje",
+        "Klikniti na vse povezave v e-pošti"
+      ],
+      correct: 1
+    },
+    {
+      question: "Kako prepoznate varno spletno stran za vpis podatkov?",
+      answers: [
+        "URL se začne s http://",
+        "Stran ima ikono ključavnice v naslovni vrstici brskalnika in URL se začne z https://",
+        "Spletna stran ima veliko slik in barv",
+        "Če je stran na prvi strani Googla"
+      ],
+      correct: 1
+    },
+    {
+      question: "Kaj NE sme biti javno dostopno na družbenih omrežjih zaradi varnosti?",
+      answers: [
+        "Vaši priljubljeni filmi",
+        "Vaša gesla in osebni podatki",
+        "Slike mačk",
+        "Objave o športnih rezultatih"
+      ],
+      correct: 1
+    }
+  ];
+
+  let currentQuestion = 0;
+  let score = 0;
+  let selectedAnswer = null;
+
+  const questionEl = document.getElementById('question');
+  const answersEl = document.getElementById('answers');
+  const submitBtn = document.getElementById('submitBtn');
+  const resultEl = document.getElementById('result');
+
+  function loadQuestion() {
+    selectedAnswer = null;
+    submitBtn.disabled = true;
+    resultEl.textContent = '';
+    const q = quizData[currentQuestion];
+    questionEl.textContent = `Vprašanje ${currentQuestion + 1} od ${quizData.length}: ${q.question}`;
+    answersEl.innerHTML = '';
+    q.answers.forEach((ans, i) => {
+      const li = document.createElement('li');
+      li.textContent = ans;
+      li.tabIndex = 0;
+      li.setAttribute('role', 'button');
+      li.setAttribute('aria-pressed', 'false');
+      li.addEventListener('click', () => selectAnswer(i));
+      li.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          selectAnswer(i);
+        }
+      });
+      answersEl.appendChild(li);
+    });
+  }
+
+  function selectAnswer(index) {
+    selectedAnswer = index;
+    submitBtn.disabled = false;
+    // Highlight selected
+    Array.from(answersEl.children).forEach((li, i) => {
+      if(i === index) {
+        li.classList.add('selected');
+        li.setAttribute('aria-pressed', 'true');
+      } else {
+        li.classList.remove('selected');
+        li.setAttribute('aria-pressed', 'false');
+      }
+    });
+  }
+
+  function showResult() {
+    const q = quizData[currentQuestion];
+    if (selectedAnswer === q.correct) {
+      score++;
+      resultEl.textContent = "Pravilen odgovor! 👍";
+      resultEl.style.color = '#77dd77';
+    } else {
+      const correctAnswerText = q.answers[q.correct];
+      resultEl.textContent = `Napačen odgovor. Pravilen odgovor je: "${correctAnswerText}".`;
+      resultEl.style.color = '#ff6666';
+    }
+  }
+
+  submitBtn.addEventListener('click', () => {
+    if(selectedAnswer === null) return;
+
+    // Show result first
+    showResult();
+
+    submitBtn.disabled = true;
+
+    // Move to next question after short delay
+    setTimeout(() => {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        showFinalScore();
+      }
+    }, 2000);
+  });
+
+  function showFinalScore() {
+    questionEl.textContent = 'Kviz je zaključen!';
+    answersEl.innerHTML = '';
+    resultEl.style.color = '#ffffff';
+    resultEl.innerHTML = `Vaš rezultat: <strong>${score} / ${quizData.length}</strong>`;
+
+    submitBtn.textContent = 'Ponovi kviz';
+    submitBtn.disabled = false;
+    submitBtn.removeEventListener('click', submitAnswerHandler);
+    submitBtn.addEventListener('click', restartQuiz);
+  }
+
+  function restartQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    submitBtn.textContent = 'Potrdi';
+    submitBtn.removeEventListener('click', restartQuiz);
+    submitBtn.addEventListener('click', submitAnswerHandler);
+    loadQuestion();
+  }
+
+  function submitAnswerHandler() {
+    if(selectedAnswer === null) return;
+
+    showResult();
+    submitBtn.disabled = true;
+
+    setTimeout(() => {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        showFinalScore();
+      }
+    }, 2000);
+  }
+
+  submitBtn.addEventListener('click', submitAnswerHandler);
+
+  loadQuestion();
+})();
+</script>
+
+</body>
+</html>
+

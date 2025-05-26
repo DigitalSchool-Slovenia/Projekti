@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Protocols Overview</title>
+    <link rel="stylesheet" type="text/css" href="internet_protocols.css">
+    <link rel="stylesheet" href="./nav.css">
+
+    </style>
+</head>
+    <header>
+    <div class="container">
+      <h1>Website Creation</h1>
+      <nav>
+        <ul>
+          <li><a href="./website_creation.html">Home</a></li>
+          <li><a href="./html.html">HTML</a></li>
+          <li><a href="./css.html">CSS</a></li>
+          <li><a href="./javascript.html">JavaScript</a></li>
+          <li><a href="./internet_protocols.html">Internet Protocols</a></li>
+        </ul>
+      </nav>
+    </div>
+    </header>
+
+<body>
+        <h1 id="heading">Understanding Internet Protocols</h1>
+        <p>The Internet Protocol (IP) is the network layer communications protocol in the Internet protocol suite for relaying datagrams across network boundaries. Its routing function enables internetworking, and essentially establishes the Internet.</p>
+
+
+    <section>
+        <h2>1. HTTP (Hypertext Transfer Protocol)</h2><img id="http" src="./slike/HTTP.png" alt="http">
+        
+        <p>HTTP is the foundation of data communication on the World Wide Web. It defines how messages are formatted and transmitted, and how web servers and browsers should respond to various commands.</p>
+        <pre><code>GET /index.html HTTP/1.1
+Host: www.example.com</code></pre>
+        <p>HTTP is stateless, meaning each request is independent, and it does not retain information about previous requests.</p>
+    </section>
+
+    <section>
+        <h2>2. HTTPS (Hypertext Transfer Protocol Secure)</h2><img id="https" src="./slike/https.jpg" alt="">
+        <p>HTTPS is an extension of HTTP that uses encryption to secure data transmitted between the client and server. It employs SSL/TLS protocols to provide confidentiality and integrity of data.</p>
+        <p>HTTPS is commonly used for online banking, shopping, and any site requiring secure data transmission.</p>
+    </section>
+
+    <section>
+        <h2>3. DNS (Domain Name System)</h2><img id="dns" src="./slike/DNS.png" alt="dns">
+        <p>DNS is like the phonebook of the internet. It translates human-friendly domain names (like <code>www.example.com</code>) into IP addresses (like <code>192.0.2.1</code>) that computers use to identify each other on the network.</p>
+        <p>Without DNS, we'd have to remember complex IP addresses to visit websites.</p>
+    </section>
+
+    <section>
+        <h2>4. TCP/IP (Transmission Control Protocol/Internet Protocol)</h2><img id="tcp" src="./slike/TCP.jpg" alt="tcp">
+        <p>TCP/IP is a suite of communication protocols used to interconnect network devices on the internet. It dictates how data is packetized, addressed, transmitted, routed, and received at the destination.</p>
+        <p>TCP ensures reliable transmission of data, while IP handles addressing and routing.</p>
+    </section>
+
+    <footer>
+        <p>For more detailed information, visit the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" target="_blank">MDN Web Docs on HTTP</a>.</p>
+    

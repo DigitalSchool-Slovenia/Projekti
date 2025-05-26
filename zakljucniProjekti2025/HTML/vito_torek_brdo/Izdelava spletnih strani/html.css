@@ -1,0 +1,21 @@
+#logo {
+    float: right;
+}
+#development {
+    width: 400px;
+    float: right;
+}
+#timeline {
+    float: right;
+}
+#code_example01 {
+    float: left;
+}
+#code_example02 {
+    float: left;
+}
+#tag_categories {
+    float: right;
+    width: 400px;
+    height: 283px;
+}

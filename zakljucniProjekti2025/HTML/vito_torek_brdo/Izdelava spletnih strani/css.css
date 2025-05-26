@@ -1,0 +1,22 @@
+profile-card h1 {
+    float: right;
+    margin: 0; /* Optional: Remove any default margin to prevent spacing issues */
+  }
+  
+body {
+    clear: both;  /* Ensures the button clears the float */
+    background-color:#fbfbfb;
+    border: none;
+    padding: 10px 20px;
+    color: rgb(1, 7, 16);
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+  }
+ p {
+font-family: sans-serif;
+  }
+#css_logo {
+  float: right;
+}

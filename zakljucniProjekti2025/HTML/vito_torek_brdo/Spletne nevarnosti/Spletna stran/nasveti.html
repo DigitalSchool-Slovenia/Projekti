@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spletne Nevarnosti</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/navbar-style.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <style>
+  .container {
+    background: #1e1f28dd;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 350px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 20px 25px 30px 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+  }
+  #quizztitle {
+    text-align: center;
+    margin: 0 0 1rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #ffffffee;
+  }
+  .question {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+  .answers {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+  }
+  .answers li {
+    background: #33384c;
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 2px solid transparent;
+    user-select: none;
+  }
+  .result {
+    background: #33384c;
+    margin-bottom: 10px;
+    padding: 0;
+    margin-top: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 0px solid transparent;
+    user-select: none;
+  }
+  .answers li:hover {
+    background: #4351a3;
+  }
+  .answers li.selected {
+    border-color: #77dd77;
+    background: #335533;
+  }
+  button {
+    background: #2575fc;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #1a589e;
+    transition: background-color 0.3s ease;
+  }
+  button:disabled {
+    background: #999;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  button:hover:not(:disabled) {
+    background: #1a589e;
+  }
+  .result {
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 400px) {
+    .container {
+      padding: 15px 20px 25px 20px;
+    }
+  }
+</style>
+
+  <main class="content">
+
+  <!-- Hamburger Toggle (Mobile) -->
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div id="title-navbar" class="fa-shield-exclamation logo">SPLETNE NEVARNOSTI</div>
+    <nav>
+      <ul>
+        <li><a id="domov" href="index.html"><i class="fa-solid fa-home"></i></i>Domov</a></li>
+        <li><a id="virus" href="virusi.html"><i class="fa-solid fa-virus"></i></i>Virusi</a></li>
+        <li><a id="kraja" href="kraja-identitete.html"><i class=" fa fa-address-card"></i>Kraja Identitete</a></li>
+        <li><a id="podatki" href="kraja-podatkov.html"><i class=" fas fa-user-ninja"></i>Kraja podatkov</a></li>
+        <li><a id="izsiljevanje" href="izsiljevanje.html"><i class=" fa fa-user-secret"></i>Izsiljevanje</a></li>
+        <li><a id="nasilje" href="nasilje.html"><i class=" fa fa-hand-fist"></i>Spletno nasilje</a></li>
+        <li><a id="nasveti" class="active" href="nasveti.html"><i class="fa-solid fa-lightbulb"></i>Nasveti</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+
+    <h1>Nasveti</h1>
+        <br><br>
+
+
+ <h3>Dvostopenjska avtentikacija</h3>
+<p> Aktiviraj jo danes! Ko se prijavljaš v račun, dobiš na mobilni telefon še dodatno, enkratno kodo 
+ ali pa dodatno kodo generiraš z aplikacijo na pametnem telefonu. To bistveno zmanjša možnost zlorabe, saj če ti nekdo ukrade geslo, se vseeno ne bo mogel 
+ prijaviti v tvoj račun. Kako to narediš? Enostavno, navodila so tu:<br></p>
+ <un>
+    <li><a href="https://support.google.com/accounts/answer/185839?hl=sl&co=GENIE.Platform%3DAndroid&sjid=8552500539248515437-EU">Google</a></li>
+    <li><a href="https://support.microsoft.com/en-us/account-billing/how-to-use-two-step-verification-with-your-microsoft-account-c7910146-672f-01e9-50a0-93b4585e7eb4">Microsoft</a></li>
+    <li><a href="https://blog.x.com/official/en_us/a/2013/getting-started-with-login-verification.html">Twitter</a></li>
+ </un>
+ <br><h3>Močno, unikatno geslo</h3>
+ <p>Danes takoj zamenjaj gesla 123456, password, geslo123, kombinacije imena in priimka, letnice rojstva itd. In ne uporabljaj enega gesla za vse storitve.</p>
+ <br><h3>Ustvari backup</h3>
+ <p>Ustvari varnostno kopijo pomembnih dokumentov, shranjenih na 
+ osebnem računalniku, pametnem telefonu ali tablici. Močno priporočamo, da za backup uporabiš medij, fizično ločen od računalnika in omrežja, 
+ npr. zunanji disk, ki ga po izdelavi backupa iztakneš iz računalnika. Zakaj je pomembno imeti backup? Zelo dober razlog so izsiljevalski virusi, ki zaklenejo vse 
+ dokumente na računalniku in zahtevajo plačilo odkupnine, v nekaterih primerih tudi v višini 600 €. Zadnje mesece prejemamo prijave
+  zaradi tovrstnega virusa CTB-Locker, ki lahko zašifrira tudi datoteke na vseh mapiranih omrežnih pogonih in zunanjih diskih, odvisno od pravic uporabnika. Trenutno sta le
+   dve rešitvi za CTB-Locker – ali 
+ obnoviš vse zaklenjene dokumente iz backupa ali plačaš. Pripravili smo tudi navodila, kako enostavno izdelaš varnostne kopije.</p>
+ <br><h3>Omeji vidnost Facebook objav</h3>
+ <p>V zavihku Nastavitve – Zasebnost izberi možnost Prijatelji. To pomeni, da bodo statusi, fotografije, video posnetki vidni le Facebook prijateljem.</p>
+ <br><h3>Zakleni telefon</h3>
+ <p>Ker je fizični dostop do mobilne naprave veliko lažji, so tudi vsi shranjeni podatki bolj izpostavljeni.
+   Zato je nujno, da uporabljaš PIN-kodo za zaklep SIM kartice in kodo za zaklep zaslona: 
+   vzorec na tipkovnici, še bolje pa PIN ali geslo.</p>
+<br><br>
+<hr>
+<br><br>
+  <div class="container" style="color: white; background-color: #1a589e;" role="main" aria-live="polite">
+    <h1 id="quizztitle">Kviz: Varnost na Internetu</h1>
+    <hr><br>
+    <div class="question" id="question" tabindex="0"></div>
+    <ul class="answers" id="answers"></ul>
+    <div class="result" id="result"></div>
+    <button id="submitBtn" disabled>Potrdi</button>
+    
+  </div>
+
+  </main>
+
+<script>
+(() => {
+  const quizData = [
+    {
+      question: "Kaj je najboljša zaščita pred krajo gesla?",
+      answers: [
+        "Uporaba enostavnega gesla, ki si ga je lahko zapomniti",
+        "Uporaba močnega, unikatnega gesla za vsak račun",
+        "Uporaba svojega rojstnega datuma kot gesla",
+        "Deljenje gesla s prijatelji za večjo varnost"
+      ],
+      correct: 1
+    },
+    {
+      question: "Kaj pomeni dvofaktorska avtentikacija (2FA)?",
+      answers: [
+        "Uporaba dveh različnih gesel hkrati",
+        "Preverjanje identitete z dvema neodvisnima načinoma",
+        "Shranjevanje gesel v oblaku",
+        "Uporaba enega gesla za dve aplikaciji"
+      ],
+      correct: 1
+    },
+    {
+      question: "Kaj morate narediti, če prejmete sumljivo e-pošto z prilogo?",
+      answers: [
+        "Odpreti prilogo, da preverite, kaj je noter",
+        "Ignorirati in takoj izbrisati e-pošto",
+        "Poslati prilogo prijatelju, da vpraša za mnenje",
+        "Klikniti na vse povezave v e-pošti"
+      ],
+      correct: 1
+    },
+    {
+      question: "Kako prepoznate varno spletno stran za vpis podatkov?",
+      answers: [
+        "URL se začne s http://",
+        "Stran ima ikono ključavnice v naslovni vrstici brskalnika in URL se začne z https://",
+        "Spletna stran ima veliko slik in barv",
+        "Če je stran na prvi strani Googla"
+      ],
+      correct: 1
+    },
+    {
+      question: "Kaj NE sme biti javno dostopno na družbenih omrežjih zaradi varnosti?",
+      answers: [
+        "Vaši priljubljeni filmi",
+        "Vaša gesla in osebni podatki",
+        "Slike mačk",
+        "Objave o športnih rezultatih"
+      ],
+      correct: 1
+    }
+  ];
+
+  let currentQuestion = 0;
+  let score = 0;
+  let selectedAnswer = null;
+  let acceptingAnswers = true;
+
+  const questionEl = document.getElementById('question');
+  const answersEl = document.getElementById('answers');
+  const submitBtn = document.getElementById('submitBtn');
+  const resultEl = document.getElementById('result');
+
+  function loadQuestion() {
+    selectedAnswer = null;
+    acceptingAnswers = true;
+    submitBtn.disabled = true;
+    resultEl.textContent = '';
+    resultEl.style.color = 'white';
+    resultEl.style.padding = '0';
+    resultEl.style.backgroundColor = '#1a589e';
+    resultEl.style.borderWidth = '0px';
+    submitBtn.textContent = 'Potrdi';
+    const q = quizData[currentQuestion];
+    questionEl.textContent = `Vprašanje ${currentQuestion + 1} od ${quizData.length}: ${q.question}`;
+    answersEl.innerHTML = '';
+    q.answers.forEach((ans, i) => {
+      const li = document.createElement('li');
+      li.textContent = ans;
+      li.tabIndex = 0;
+      li.setAttribute('role', 'button');
+      li.setAttribute('aria-pressed', 'false');
+      li.classList.remove('selected');
+      li.addEventListener('click', () => {
+        if (!acceptingAnswers) return;
+        selectAnswer(i);
+      });
+      li.addEventListener('keydown', e => {
+        if ((e.key === 'Enter' || e.key === ' ') && acceptingAnswers) {
+          e.preventDefault();
+          selectAnswer(i);
+        }
+      });
+      answersEl.appendChild(li);
+    });
+  }
+
+  function selectAnswer(index) {
+    selectedAnswer = index;
+    submitBtn.disabled = false;
+    // Highlight selected
+    Array.from(answersEl.children).forEach((li, i) => {
+      if(i === index) {
+        li.classList.add('selected');
+        li.setAttribute('aria-pressed', 'true');
+      } else {
+        li.classList.remove('selected');
+        li.setAttribute('aria-pressed', 'false');
+      }
+    });
+  }
+
+  function showResult() {
+    const q = quizData[currentQuestion];
+    acceptingAnswers = false;
+    if (selectedAnswer === q.correct) {
+      score++;
+      resultEl.textContent = "Pravilen odgovor! 👍";
+      resultEl.style.color = 'white';
+      resultEl.style.padding = '12px 15px';
+      resultEl.style.backgroundColor = '#335533';
+      resultEl.style.borderWidth = '2px';
+      resultEl.style.borderColor = '#77dd77';
+    } else {
+      const correctAnswerText = q.answers[q.correct];
+      resultEl.textContent = `Napačen odgovor. Pravilen odgovor je: "${correctAnswerText}".`;
+      resultEl.style.color = 'white';
+      resultEl.style.padding = '12px 15px';
+      resultEl.style.backgroundColor = '#c70d00';
+      resultEl.style.borderWidth = '2px';
+      resultEl.style.borderColor = '#ff4133';
+    }
+  }
+
+  function showFinalScore() {
+    questionEl.textContent = 'Kviz je zaključen!';
+    answersEl.innerHTML = '';
+    resultEl.style.color = '#ffffff';
+    resultEl.innerHTML = `Vaš rezultat: <strong>${score} / ${quizData.length}</strong>`;
+    resultEl.style.color = 'white';
+    resultEl.style.padding = '12px 15px';
+    resultEl.style.backgroundColor = '#335533';
+    resultEl.style.borderWidth = '2px';
+    resultEl.style.borderColor = '#77dd77';
+    submitBtn.textContent = 'Ponovi kviz';
+    submitBtn.disabled = false;
+    submitBtn.onclick = () => {
+      currentQuestion = 0;
+      score = 0;
+      resultEl.textContent = '';
+      loadQuestion();
+    };
+  }
+
+  submitBtn.addEventListener('click', () => {
+    if (!acceptingAnswers) {
+      // If quiz ended and button is "Ponovi kviz", do nothing since onclick handler is set inside showFinalScore
+      return;
+    }
+    if(selectedAnswer === null) {
+      return;
+    }
+    showResult();
+    submitBtn.disabled = true;
+
+    setTimeout(() => {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        showFinalScore();
+      }
+    }, 2000);
+  });
+
+  loadQuestion();
+})();
+</script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,31 @@
+Ena izmed najnevarnejših oblik kraje podatkov v računalništvu je izsiljevanje. To pomeni, da napadalec uporabniku prepreči dostop do lastnih podatkov ali jih grozi razkriti, dokler žrtev ne plača določene vsote denarja – pogosto v kriptovaluti, kot je Bitcoin. Ta vrsta napada se imenuje tudi ransomware.
+
+Kako deluje izsiljevanje preko računalnika?
+Okužba sistema: Napadalec pošlje zlonamerno datoteko, ki jo žrtev odpre (pogosto preko elektronske pošte ali sumljivih spletnih strani).
+
+Zaklepanje podatkov: Ko se virus aktivira, zašifrira (zaklene) vse datoteke v računalniku.
+
+Sporočilo za odkupnino: Na zaslonu se pojavi sporočilo, ki uporabniku sporoča, da so njegovi podatki zaklenjeni in da mora plačati odkupnino, če jih želi nazaj.
+
+Grožnje: Če žrtev ne plača, napadalci grozijo z uničenjem podatkov ali javno objavo zasebnih informacij.
+
+Znani primeri
+WannaCry (2017): Globalni napad, ki je prizadel več kot 200.000 računalnikov v 150 državah, vključno z bolnišnicami in podjetji.
+
+REvil, DarkSide: Skupine, ki so izvajale velike izsiljevalske napade na podjetja, kot so Colonial Pipeline (ZDA) in JBS Foods.
+
+Zakaj je to nevarno?
+Uporabnik izgubi pomembne podatke (družinske slike, šolske datoteke, poslovne dokumente).
+
+Tudi če plačaš, ni garancije, da boš podatke dobil nazaj.
+
+Takšni napadi pogosto vodijo v dodatne vdore ali krajo identitete.
+
+Kako se zaščititi pred izsiljevanjem?
+Redno izdeluj varnostne kopije (backup) svojih podatkov.
+
+Ne odpiraj sumljivih priponk ali povezav.
+
+Posodabljaj operacijski sistem in protivirusno zaščito.
+
+Uporabljaj zapletena gesla in dvostopenjsko avtentikacijo.

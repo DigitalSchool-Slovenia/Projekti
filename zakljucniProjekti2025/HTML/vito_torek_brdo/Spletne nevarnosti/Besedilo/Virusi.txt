@@ -1,0 +1,16 @@
+
+
+Kaj storiti, če ste okuženi z virusom?
+Če menite, da je vaš računalnik okužen z virusom, ukrepajte čim prej:
+
+Izklopite internetno povezavo: Tako preprečite nadaljnje širjenje virusa ali prenos dodatnih škodljivih datotek.
+
+Zaženite protivirusni program: Izvedite popoln pregled sistema z vašim protivirusnim programom, da odstranite viruse.
+
+Posodobite zaščitno programsko opremo: Poskrbite, da so vaši protivirusni programi posodobljeni, saj se novi virusi pogosto izognejo starejšim zaščitam.
+
+Obrnite se na strokovnjake: Če ne morete odstraniti virusa ali ste postali žrtev ransomware-a, se posvetujte s strokovnjakom za računalniško varnost.
+
+Zaključek: Ostanite zaščiteni
+Računalniški virusi so resna grožnja, vendar lahko z ustreznimi varnostnimi ukrepi in previdnostjo zmanjšate tveganje za okužbo. Redno spremljanje stanja vaše naprave, posodabljanje programske opreme in uporaba protivirusne zaščite so ključni koraki za zaščito vaših podatkov in naprav.
+
