@@ -25,13 +25,13 @@ running = True
 pygame.font.init()
 font = pygame.font.SysFont(None, 100)  # You can adjust size here
 
-lines = Sprite(5,1000,338,5,"images.png") 
+lines = Sprite(5,1000,338,5,"bg.png") 
 
-lines1 = Sprite(5,1000,674,5,"images.png") 
+lines1 = Sprite(5,1000,674,5,"bg.png") 
 
-lines2 = Sprite(1000,5,5,338,"images.png") 
+lines2 = Sprite(1000,5,5,338,"bg.png") 
 
-lines3 = Sprite(1000,5,5,674,"images.png") 
+lines3 = Sprite(1000,5,5,674,"bg.png") 
 
 clock = pygame.time.Clock() 
 
@@ -41,57 +41,57 @@ running = True
 
 b1utton_rect = pygame.Rect(0,0,338,338) 
 
-x1 = Sprite(323,323,0,0,"39-512.webp") 
+x1 = Sprite(323,323,0,0,"x.png") 
 
-o1 = Sprite(323,323,0,0,"images (1).png") 
+o1 = Sprite(323,323,0,0,"o.png") 
 
 b2utton_rect = pygame.Rect(338,0,338,338) 
 
-x2 = Sprite(323,323,338,0,"39-512.webp") 
+x2 = Sprite(323,323,338,0,"x.png") 
 
-o2 = Sprite(323,323,338,0,"images (1).png") 
+o2 = Sprite(323,323,338,0,"o.png") 
 
 b3utton_rect = pygame.Rect(674,0,338,338) 
 
-x3 = Sprite(323,323,674,0,"39-512.webp") 
+x3 = Sprite(323,323,674,0,"x.png") 
 
-o3 = Sprite(323,323,674,0,"images (1).png") 
+o3 = Sprite(323,323,674,0,"o.png") 
 
 b4utton_rect = pygame.Rect(0,338,338,338) 
 
-x4 = Sprite(323,323,0,338,"39-512.webp") 
+x4 = Sprite(323,323,0,338,"x.png") 
 
-o4 = Sprite(323,323,0,338,"images (1).png") 
+o4 = Sprite(323,323,0,338,"o.png") 
 
 b5utton_rect = pygame.Rect(338,338,338,338) 
 
-x5 = Sprite(323,323,338,338,"39-512.webp") 
+x5 = Sprite(323,323,338,338,"x.png") 
 
-o5 = Sprite(323,323,338,338,"images (1).png") 
+o5 = Sprite(323,323,338,338,"o.png") 
 
 b6utton_rect = pygame.Rect(674,338,338,338) 
 
-x6 = Sprite(323,323,674,338,"39-512.webp") 
+x6 = Sprite(323,323,674,338,"x.png") 
 
-o6 = Sprite(323,323,674,338,"images (1).png") 
+o6 = Sprite(323,323,674,338,"o.png") 
 
 b7utton_rect = pygame.Rect(0,674,338,338) 
 
-x7 = Sprite(323,323,0,674,"39-512.webp") 
+x7 = Sprite(323,323,0,674,"x.png") 
 
-o7 = Sprite(323,323,0,674,"images (1).png") 
+o7 = Sprite(323,323,0,674,"o.png") 
 
 b8utton_rect = pygame.Rect(338,674,338,338) 
 
-x8 = Sprite(323,323,338,674,"39-512.webp") 
+x8 = Sprite(323,323,338,674,"x.png") 
 
-o8 = Sprite(323,323,338,674,"images (1).png") 
+o8 = Sprite(323,323,338,674,"o.png") 
 
 b9utton_rect = pygame.Rect(674,674,338,338) 
 
-x9 = Sprite(323,323,674,674,"39-512.webp") 
+x9 = Sprite(323,323,674,674,"x.png") 
 
-o9 = Sprite(323,323,674,674,"images (1).png")
+o9 = Sprite(323,323,674,674,"o.png")
 
 
 b1_filled = False
